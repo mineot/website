@@ -6,10 +6,21 @@
     </v-card-text>
   </v-card>
 
-  <v-card>
+  <v-card class="mr">
     <v-card-text>
       <v-btn @click="store.increment()">Pinia Text</v-btn>
       <span>Pinia Count: {{ store.count }}</span>
+    </v-card-text>
+  </v-card>
+
+  <v-card>
+    <v-card-text>
+      <v-btn variant="tonal" color="primary">Primary</v-btn>
+      <v-btn variant="tonal" color="secondary">Secondary</v-btn>
+      <v-btn variant="tonal" color="error">Error</v-btn>
+      <v-btn variant="tonal" color="info">Info</v-btn>
+      <v-btn variant="tonal" color="success">Success</v-btn>
+      <v-btn variant="tonal" color="warning">Warning</v-btn>
     </v-card-text>
   </v-card>
 </template>
