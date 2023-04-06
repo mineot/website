@@ -1,7 +1,10 @@
 # website
 <<<<<<< HEAD
+<<<<<<< HEAD
 My Website
 =======
+=======
+>>>>>>> ea555f6 (Initial commit)
 
 This template should help get you started developing with Vue 3 in Vite.
 
@@ -69,4 +72,7 @@ npm run test:e2e
 ```sh
 npm run lint
 ```
+<<<<<<< HEAD
+>>>>>>> ea555f6 (Initial commit)
+=======
 >>>>>>> ea555f6 (Initial commit)
