@@ -13,7 +13,7 @@
     </v-card-text>
   </v-card>
 
-  <v-card>
+  <v-card class="mr">
     <v-card-text>
       <v-btn variant="tonal" color="primary">Primary</v-btn>
       <v-btn variant="tonal" color="secondary">Secondary</v-btn>
@@ -21,6 +21,12 @@
       <v-btn variant="tonal" color="info">Info</v-btn>
       <v-btn variant="tonal" color="success">Success</v-btn>
       <v-btn variant="tonal" color="warning">Warning</v-btn>
+    </v-card-text>
+  </v-card>
+
+  <v-card>
+    <v-card-text>
+      Translation: {{ $t("hi") }}
     </v-card-text>
   </v-card>
 </template>
