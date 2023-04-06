@@ -1,11 +1,17 @@
 <template>
-  <main>
-    <button @click="innerIncrement()">Inner Test</button>
-    <span>Inner Count: {{ innerCounter }}</span>
-    <hr>
-    <button @click="store.increment()">Pinia Test</button>
-    <span>Pinia Count: {{ store.count }}</span>
-  </main>
+  <v-card class="mr">
+    <v-card-text>
+      <v-btn @click="innerIncrement()">Inner Text</v-btn>
+      <span>Inner Count: {{ innerCounter }}</span>
+    </v-card-text>
+  </v-card>
+
+  <v-card>
+    <v-card-text>
+      <v-btn @click="store.increment()">Pinia Text</v-btn>
+      <span>Pinia Count: {{ store.count }}</span>
+    </v-card-text>
+  </v-card>
 </template>
 
 <script setup lang="ts">
@@ -22,8 +28,9 @@ function innerIncrement() {
 </script>
 
 <style scoped>
-main {
-  margin: 5rem;
+.mr {
+  margin-top: 1em;
+  margin-bottom: 1em;
 }
 
 button {
