@@ -12,8 +12,8 @@
 
 <script setup lang="ts">
 import { ref } from "vue";
-import { useCounterStore } from '@/stores/counter';
-import TheWelcome from '../components/TheWelcome.vue';
+import { useCounterStore } from "@/stores/counter";
+import TheWelcome from "@/components/TheWelcome.vue";
 
 const store = useCounterStore();
 
