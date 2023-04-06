@@ -8,4 +8,9 @@ const router = createRouter({
   ]
 });
 
+router.beforeEach((to: any) => {
+  console.log(to);
+  return true;
+});
+
 export { router };
