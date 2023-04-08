@@ -14,20 +14,20 @@ const websiteTheme = {
     info: "#2196F3", // blue
     success: "#009688", // teal
     warning: "#ff6f00", // amber darken-4
-  }
+  },
 };
 
 const style = createVuetify({
   theme: {
     defaultTheme: "websiteTheme",
     themes: {
-      websiteTheme
-    }
+      websiteTheme,
+    },
   },
   icons: {
-    defaultSet: 'mdi',
+    defaultSet: "mdi",
     aliases,
-    sets: { mdi }
+    sets: { mdi },
   },
   components,
   directives,
