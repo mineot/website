@@ -1,0 +1,18 @@
+{
+  "defaultTheme": "websiteTheme",
+  "themes": {
+    "websiteTheme": {
+      "dark": true,
+      "colors": {
+        "background": "#111",
+        "surface": "#000",
+        "primary": "#CDDC39",
+        "secondary": "#BA68C8",
+        "error": "#E53935",
+        "info": "#2196F3",
+        "success": "#009688",
+        "warning": "#FF6F00"
+      }
+    }
+  }
+}
