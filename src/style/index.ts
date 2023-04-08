@@ -1,4 +1,5 @@
 import { createVuetify } from "vuetify";
+import { aliases, mdi } from "vuetify/iconsets/mdi";
 import * as components from "vuetify/components";
 import * as directives from "vuetify/directives";
 
@@ -12,7 +13,7 @@ const websiteTheme = {
     error: "#E53935", // red darken-1
     info: "#2196F3", // blue
     success: "#009688", // teal
-    warning: "#FF9800", // orange
+    warning: "#ff6f00", // amber darken-4
   }
 };
 
@@ -22,6 +23,11 @@ const style = createVuetify({
     themes: {
       websiteTheme
     }
+  },
+  icons: {
+    defaultSet: 'mdi',
+    aliases,
+    sets: { mdi }
   },
   components,
   directives,
