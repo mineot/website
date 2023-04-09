@@ -24,12 +24,6 @@
     </v-card-text>
   </v-card>
 
-  <v-card class="mr">
-    <v-card-text>
-      Translation: {{ $t("hi") }}
-    </v-card-text>
-  </v-card>
-
   <v-card>
     <v-card-text>
       <v-icon icon="mdi-bitcoin" size="50" color="primary"></v-icon>

@@ -4,8 +4,8 @@
     "websiteTheme": {
       "dark": true,
       "colors": {
-        "background": "#111",
-        "surface": "#000",
+        "background": "#111827",
+        "surface": "#0D121B",
         "primary": "#CDDC39",
         "secondary": "#BA68C8",
         "error": "#E53935",
