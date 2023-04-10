@@ -1,5 +1,6 @@
 {
   "person": {
+    "photo": "https://placehold.co/600x400",
     "name": "Seu Nome!",
     "contact": {
       "email": "contact@email.com",

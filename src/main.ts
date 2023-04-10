@@ -14,5 +14,5 @@ app.use(createPinia());
 app.use(router);
 app.use(style);
 app.use(i18n);
-app.config.globalProperties.$document = document;
+app.provide("document", document);
 app.mount("#app");

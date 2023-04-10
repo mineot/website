@@ -4,6 +4,7 @@ interface Contact {
 }
 
 interface Person {
+  photo: string;
   name: string;
   contact: Contact;
   bio: string;

@@ -1,13 +1,7 @@
 <template>
-  <h1>Profile View; {{ document.person.name }}</h1>
+  <ProfilePerson></ProfilePerson>
 </template>
 
 <script setup lang="ts">
-// VUE AND CONFIGS
-import { ref, getCurrentInstance } from "vue";
-
-import type { Document } from "@/doc/document";
-
-const app = getCurrentInstance();
-const document: Document = ref(app?.appContext.config.globalProperties.$document);
+import ProfilePerson from "@/components/ProfilePerson.vue";
 </script>

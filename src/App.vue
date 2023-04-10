@@ -27,7 +27,6 @@ import SidebarHead from "@/components/SidebarHead.vue";
 import SidebarMenu from "@/components/SidebarMenu.vue";
 
 const info = useInfoStore();
-
 let drawer = ref(true);
 
 function changeDrawer(): void {
