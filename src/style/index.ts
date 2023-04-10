@@ -2,14 +2,7 @@ import { createVuetify } from "vuetify";
 import { aliases, mdi } from "vuetify/iconsets/mdi";
 import * as components from "vuetify/components";
 import * as directives from "vuetify/directives";
-
-let styleConf = await fetch("./conf/style.json");
-let theme = await styleConf.json();
-
-if (Object.keys(theme).length === 0) {
-  styleConf = await fetch("./conf/style.default.json");
-  theme = await styleConf.json();
-}
+import theme from "./theme";
 
 const style = createVuetify({
   theme,
