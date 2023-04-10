@@ -1,3 +1,5 @@
 <template>
-  <h1>Sidebar Head</h1>
+<div>
+  <v-img src="logo.png"></v-img>
+</div>
 </template>
