@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from "vue-router";
 import { useInfoStore } from "@/stores/info";
-import HomeView from "@/views/HomeView.vue";
+import ProfileView from "@/views/ProfileView.vue";
 
 const RoutePath = {
   PROFILE: "/",
@@ -16,7 +16,7 @@ const router = createRouter({
     {
       path: RoutePath.PROFILE,
       name: RoutePathTitle[RoutePath.PROFILE],
-      component: HomeView,
+      component: ProfileView,
     },
   ],
 });
