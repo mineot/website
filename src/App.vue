@@ -1,7 +1,8 @@
 <template>
   <v-app id="inspire">
     <v-navigation-drawer v-model="drawer">
-      <v-btn to="/">Home</v-btn>
+      <SidebarHead></SidebarHead>
+      <SidebarMenu></SidebarMenu>
     </v-navigation-drawer>
 
     <v-app-bar>
@@ -21,6 +22,9 @@
 import { ref } from "vue";
 import { RouterView } from "vue-router";
 import { useInfoStore } from "@/stores/info";
+
+import SidebarHead from "@/components/SidebarHead.vue"
+import SidebarMenu from "@/components/SidebarMenu.vue"
 
 const info = useInfoStore();
 let drawer = ref(true);
