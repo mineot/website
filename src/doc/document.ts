@@ -3,6 +3,7 @@ interface Contact {
   phone?: string;
   whatsapp?: string;
   telegram?: string;
+  instagram?: string;
 }
 
 interface Language {
