@@ -1,0 +1,7 @@
+{
+  "pt": "document.pt.json",
+  "pt-br": "document.pt.json",
+  "en": "document.en.json",
+  "en-us": "document.en.json",
+  "fallback": "document.en.json"
+}
