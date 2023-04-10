@@ -1,14 +1,16 @@
-export interface Contact {
+interface Contact {
   email: string;
   phone: string;
 }
 
-export interface Person {
+interface Person {
   name: string;
   contact: Contact;
   bio: string;
 }
 
-export interface Document {
+interface Document {
   person: Person;
 }
+
+export type { Document, Person, Contact };

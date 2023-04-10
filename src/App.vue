@@ -23,10 +23,11 @@ import { ref } from "vue";
 import { RouterView } from "vue-router";
 import { useInfoStore } from "@/stores/info";
 
-import SidebarHead from "@/components/SidebarHead.vue"
-import SidebarMenu from "@/components/SidebarMenu.vue"
+import SidebarHead from "@/components/SidebarHead.vue";
+import SidebarMenu from "@/components/SidebarMenu.vue";
 
 const info = useInfoStore();
+
 let drawer = ref(true);
 
 function changeDrawer(): void {
