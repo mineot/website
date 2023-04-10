@@ -1,17 +1,30 @@
 interface Contact {
-  email: string;
-  phone: string;
+  email?: string;
+  phone?: string;
+  whatsapp?: string;
+  telegram?: string;
+}
+
+interface Language {
+  name: string;
+  level: number;
 }
 
 interface Person {
   photo: string;
   name: string;
-  contact: Contact;
   bio: string;
+  contact?: Contact;
+  languages?: Language[];
 }
 
 interface Document {
   person: Person;
 }
 
-export type { Document, Person, Contact };
+export type {
+  Contact,
+  Document,
+  Language,
+  Person,
+};
