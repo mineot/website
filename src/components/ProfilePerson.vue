@@ -1,47 +1,29 @@
 <template>
-  <v-card class="mx-auto" max-width="400">
+  <v-card class="mx-auto pb-3" variant="outlined" max-width="400">
 
     <v-img class="align-end text-white" height="200" :src="document.person.photo" cover> </v-img>
 
     <v-card-title>
-      <span class="text-h4">{{ person.name }}</span>
+      <span class="text-h3">{{ person.name }}</span>
     </v-card-title>
 
-    <div v-for="(contact, index) in contactList" :key="index" class="mx-3">
-      <v-btn :prepend-icon="contact.icon" :href="contact.href" :target="contact.target" variant="text">
+    <div v-for="(contact, index) in contacts" :key="index" class="mx-3">
+      <v-btn :prepend-icon="contact.icon" :href="contact.href" :target="contact.target" variant="plain">
         {{ $t(contact.text) }}
       </v-btn>
     </div>
-
-    <v-card-text>
-      <div class="mb-2">{{ $t("socials") }}</div>
-      <div>
-        <v-btn prepend-icon="mdi-link" href="" target="blank" size="small" variant="text">
-          Instagram
-        </v-btn>
-      </div>
-    </v-card-text>
-
-    <v-card-actions>
-      <v-btn color="primary">
-        Share
-      </v-btn>
-      <v-btn color="primary">
-        Explore
-      </v-btn>
-    </v-card-actions>
 
   </v-card>
 </template>
 
 <script setup lang="ts">
-import { inject, computed } from "vue";
-import type { Document, Person, Contact } from "@/doc/document";
+import { computed, inject } from "vue";
+import type { Contact, Document, Person, Social } from "@/doc/document";
 
 const document: Document = inject("document") as Document;
 const person: Person = document.person;
 
-const contactList = computed((): any[] => {
+const contacts = computed((): any[] => {
   if (!person.contact) {
     return [];
   }
@@ -65,6 +47,18 @@ const contactList = computed((): any[] => {
     list.push({ icon: "mdi-cellphone-message", href: contact.telegram, text: "contacts.telegram", target: "blank" });
   }
 
+  socials.value.forEach((el: Social) => {
+    list.push({ icon: "mdi-link", href: el.src, text: el.name, target: "blank" });
+  });
+
   return list;
+});
+
+const socials = computed((): Social[] => {
+  if (!person.socials) {
+    return [];
+  }
+
+  return person.socials;
 });
 </script>

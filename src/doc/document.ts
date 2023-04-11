@@ -3,6 +3,11 @@ interface Social {
   src: string;
 }
 
+interface Language {
+  name: string;
+  level: number;
+}
+
 interface Contact {
   email?: string;
   phone?: string;
@@ -10,17 +15,12 @@ interface Contact {
   telegram?: string;
 }
 
-interface Language {
-  name: string;
-  level: number;
-}
-
 interface Person {
   photo: string;
   name: string;
   bio: string;
   contact?: Contact;
-  socials: Social[];
+  socials?: Social[];
   languages?: Language[];
 }
 
