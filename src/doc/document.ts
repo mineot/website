@@ -1,9 +1,13 @@
+interface Social {
+  name: string;
+  src: string;
+}
+
 interface Contact {
   email?: string;
   phone?: string;
   whatsapp?: string;
   telegram?: string;
-  instagram?: string;
 }
 
 interface Language {
@@ -16,6 +20,7 @@ interface Person {
   name: string;
   bio: string;
   contact?: Contact;
+  socials: Social[];
   languages?: Language[];
 }
 
@@ -28,4 +33,5 @@ export type {
   Document,
   Language,
   Person,
+  Social,
 };

@@ -1,4 +1,11 @@
 {
   "profile": "Professional Profile",
-  "website": "Website"
+  "socials": "Social Media",
+  "website": "Website",
+  "contacts": {
+    "email": "Send an Email",
+    "phone": "Making a Call",
+    "whatsapp": "WhatsApp",
+    "telegram": "Telegram"
+  }
 }
