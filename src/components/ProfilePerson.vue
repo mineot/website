@@ -13,15 +13,19 @@
       </v-btn>
     </div>
 
+    <LanguageWidget class="mx-6 mt-5" :languages="languages"></LanguageWidget>
+
   </v-card>
 </template>
 
 <script setup lang="ts">
 import { computed, inject } from "vue";
-import type { Contact, Document, Person, Social } from "@/doc/document";
+import type { Contact, Document, Person, Social, Language } from "@/doc/document";
+import LanguageWidget from "@/widgets/LanguageWidget.vue";
 
 const document: Document = inject("document") as Document;
 const person: Person = document.person;
+const languages: Language[] = person.languages || [];
 
 const contacts = computed((): any[] => {
   if (!person.contact) {
