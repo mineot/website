@@ -1,14 +1,17 @@
 <template>
   <div>
-    <v-row v-for="(lang, index) in languages" :key="index">
-      <v-col class="text-h6">
-        {{ lang.name }}
-      </v-col>
-      <v-col>
-        <v-rating v-model="lang.level" :empty-icon="rating.empty" :full-icon="rating.full" density="compact">
-        </v-rating>
-      </v-col>
-    </v-row>
+
+    <div v-for="(lang, index) in languages" :key="index">
+
+      <span> {{ lang.name }} </span>
+
+      <v-spacer></v-spacer>
+
+      <v-rating v-model="lang.level" :empty-icon="rating.empty" :full-icon="rating.full" size="x-small" density="compact">
+      </v-rating>
+
+    </div>
+
   </div>
 </template>
 
