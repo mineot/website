@@ -1,16 +1,18 @@
 <template>
   <div>
 
-    <div v-for="(lang, index) in languages" :key="index">
+    <v-list density="compact" class="pa-0" variant="tonal">
+      <v-list-item v-for="(lang, index) in languages" :key="index"  class="noScroll">
 
-      <span> {{ lang.name }} </span>
+        <span>{{ lang.name }} </span>
 
-      <v-spacer></v-spacer>
+        <template v-slot:append>
+          <v-rating v-model="lang.level" color="secondary" size="x-small" density="compact" class="pb-1">
+          </v-rating>
+        </template>
 
-      <v-rating v-model="lang.level" :empty-icon="rating.empty" :full-icon="rating.full" size="x-small" density="compact">
-      </v-rating>
-
-    </div>
+      </v-list-item>
+    </v-list>
 
   </div>
 </template>
@@ -22,9 +24,10 @@ import type { Language } from "@/doc/document";
 defineProps({
   languages: Array<Language>
 });
-
-const rating = {
-  empty: "mdi-square-rounded-outline",
-  full: "mdi-square-rounded",
-};
 </script>
+
+<style scoped>
+.noScroll {
+  overflow-x: hidden;
+}
+</style>
