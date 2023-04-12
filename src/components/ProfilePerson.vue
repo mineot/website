@@ -1,39 +1,33 @@
 <template>
   <v-row>
-
-    <v-col>
-      <v-card class="mx-auto pb-3" variant="tonal" max-width="400">
-
-        <v-img class="align-end text-white" height="200" :src="document.person.photo" cover> </v-img>
-
-        <v-card-title>
-          <span class="text-h3">{{ person.name }}</span>
-        </v-card-title>
-
-        <div v-for="(contact, index) in contacts" :key="index" class="mx-3">
-          <v-btn :prepend-icon="contact.icon" :href="contact.href" :target="contact.target" variant="plain">
-            {{ $t(contact.text) }}
-          </v-btn>
+    <v-col cols="12" sm="6">
+      <v-avatar :image="person.photo" size="180" rounded="0"></v-avatar>
+      <div class="text-h3 mt-6">{{ person.name }}</div>
+      <div v-for="(contact, index) in contacts" :key="index" class="my-4">
+        <v-btn :prepend-icon="contact.icon" :href="contact.href" :target="contact.target" variant="tonal" block>
+          {{ $t(contact.text) }}
+        </v-btn>
+      </div>
+      <div v-if="languages.length">
+        <TitleWidget title="languages" size="small"></TitleWidget>
+        <div v-for="(lang, index) in languages" :key="index" class="pb-3">
+          {{ lang.name }}
+          <v-rating v-model="lang.level" color="secondary" size="x-small" density="compact" class="float-right">
+          </v-rating>
         </div>
-
-        <LanguageWidget class="mx-6 mt-5" :languages="languages"></LanguageWidget>
-
-      </v-card>
+      </div>
     </v-col>
-
-    <v-col>
-      <div class="text-h4">Bio</div>
-      <hr class="mb-6">
-      {{ person.bio }}
+    <v-col cols="12" sm="6">
+      <TitleWidget title="bio"></TitleWidget>
+      <div>{{ person.bio }}</div>
     </v-col>
-
   </v-row>
 </template>
 
 <script setup lang="ts">
 import { computed, inject } from "vue";
 import type { Contact, Document, Person, Social, Language } from "@/doc/document";
-import LanguageWidget from "@/widgets/LanguageWidget.vue";
+import TitleWidget from "@/widgets/TitleWidget.vue"
 
 const document: Document = inject("document") as Document;
 const person: Person = document.person;
