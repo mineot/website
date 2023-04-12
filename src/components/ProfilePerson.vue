@@ -1,21 +1,33 @@
 <template>
-  <v-card class="mx-auto pb-3" variant="outlined" max-width="400">
+  <v-row>
 
-    <v-img class="align-end text-white" height="200" :src="document.person.photo" cover> </v-img>
+    <v-col>
+      <v-card class="mx-auto pb-3" variant="tonal" max-width="400">
 
-    <v-card-title>
-      <span class="text-h3">{{ person.name }}</span>
-    </v-card-title>
+        <v-img class="align-end text-white" height="200" :src="document.person.photo" cover> </v-img>
 
-    <div v-for="(contact, index) in contacts" :key="index" class="mx-3">
-      <v-btn :prepend-icon="contact.icon" :href="contact.href" :target="contact.target" variant="plain">
-        {{ $t(contact.text) }}
-      </v-btn>
-    </div>
+        <v-card-title>
+          <span class="text-h3">{{ person.name }}</span>
+        </v-card-title>
 
-    <LanguageWidget class="mx-6 mt-5" :languages="languages"></LanguageWidget>
+        <div v-for="(contact, index) in contacts" :key="index" class="mx-3">
+          <v-btn :prepend-icon="contact.icon" :href="contact.href" :target="contact.target" variant="plain">
+            {{ $t(contact.text) }}
+          </v-btn>
+        </div>
 
-  </v-card>
+        <LanguageWidget class="mx-6 mt-5" :languages="languages"></LanguageWidget>
+
+      </v-card>
+    </v-col>
+
+    <v-col>
+      <div class="text-h4">Bio</div>
+      <hr class="mb-6">
+      {{ person.bio }}
+    </v-col>
+
+  </v-row>
 </template>
 
 <script setup lang="ts">

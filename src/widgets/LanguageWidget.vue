@@ -1,7 +1,7 @@
 <template>
   <div>
 
-    <v-list density="compact" class="pa-0" variant="tonal">
+    <v-list density="compact" class="pa-0" variant="tonal" elevation="2">
       <v-list-item v-for="(lang, index) in languages" :key="index"  class="noScroll">
 
         <span>{{ lang.name }} </span>
