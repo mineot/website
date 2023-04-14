@@ -26,7 +26,7 @@
 
 <script setup lang="ts">
 import { computed, inject } from "vue";
-import type { Contact, Document, Person, Social, Language } from "@/doc/document";
+import type { Contact, Document, Person, Social, Language } from "@/stores/doc/document";
 import TitleWidget from "@/widgets/TitleWidget.vue"
 
 const document: Document = inject("document") as Document;
