@@ -1,9 +1,9 @@
-import { computed } from "vue";
+import { computed, ref } from "vue";
 import { defineStore } from "pinia";
 import type { Document } from "@/stores/doc/document";
 
 export const useDocStore = defineStore("doc", () => {
-  let innerDoc: Document;
+  const innerDoc = ref();
 
   const recoveryDocument = async (): Promise<void> => {
     const langs = await fetch("./document.langs.json");
@@ -16,10 +16,10 @@ export const useDocStore = defineStore("doc", () => {
     }
 
     const refDoc: any = await fetch(`./${langDocKey}`);
-    innerDoc = await refDoc.json() as Document;
+    innerDoc.value = await refDoc.json() as Document;
   };
 
-  const document = computed((): Document => innerDoc);
+  const document = computed((): Document => innerDoc.value as Document);
 
   return { recoveryDocument, document };
 });

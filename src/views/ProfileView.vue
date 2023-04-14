@@ -8,12 +8,16 @@
     <v-btn :color="btn.color" class="mr-2" variant="text">{{ btn.text }}</v-btn>
     <v-btn :color="btn.color" class="mr-2" variant="outlined">{{ btn.text }}</v-btn>
   </div>
+  <div>Document: {{ docStore.document }}</div>
   <!-- <ProfilePerson></ProfilePerson> -->
 </template>
 
 <script setup lang="ts">
+import { useDocStore } from "@/stores/doc";
 // import ProfilePerson from "@/components/ProfilePerson.vue";
 import TitleWidget from "@/widgets/TitleWidget.vue";
+
+const docStore = useDocStore();
 
 const btns = [
   { color: "primary", text: "Primary" },
