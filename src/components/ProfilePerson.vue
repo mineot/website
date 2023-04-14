@@ -19,11 +19,15 @@
         </v-sheet>
       </v-sheet>
 
-      <v-sheet>
+      <v-sheet class="mb-3">
         <v-btn v-for="(social, index) in socials" :key="index" class="mr-2 mb-2" color="secondary" variant="tonal"
           :prepend-icon="social.icon" :href="social.src" :target="social.target">
           {{ social.text }}
         </v-btn>
+      </v-sheet>
+
+      <v-sheet>
+        {{ person?.languages }}
       </v-sheet>
 
     </v-card-text>
@@ -34,6 +38,7 @@
 import { computed } from "vue";
 import { useDocStore } from "@/stores/doc";
 import type { Document, Person } from "@/stores/doc/document";
+import { ContactIcon, ContactHref, ContactTarget } from "@/stores/doc/document.enum";
 
 const docStore = useDocStore();
 docStore.loadDocument();
@@ -45,25 +50,14 @@ const person = computed((): Person | undefined => document.value ? document.valu
 const contacts = computed((): any[] => {
   if (person?.value?.contact) {
     const contact: any = person.value.contact;
-    const list: any[] = [];
-
-    if (contact.email) {
-      list.push({ icon: "mdi-email", href: `mailto:${contact.email}`, text: "contacts.email", target: "" });
-    }
-
-    if (contact.phone) {
-      list.push({ icon: "mdi-phone", href: `tel:${contact.phone}`, text: "contacts.phone", target: "" });
-    }
-
-    if (contact.whatsapp) {
-      list.push({ icon: "mdi-cellphone-message", href: contact.whatsapp, text: "contacts.whatsapp", target: "blank" });
-    }
-
-    if (contact.telegram) {
-      list.push({ icon: "mdi-cellphone-message", href: contact.telegram, text: "contacts.telegram", target: "blank" });
-    }
-
-    return list;
+    return Object.keys(contact).map((key: string) => {
+      return {
+        icon: ContactIcon[key],
+        text: `contacts.${key}`,
+        href: ContactHref(key, contact[key]),
+        target: ContactTarget(key),
+      };
+    });
   }
 
   return [];
@@ -71,13 +65,9 @@ const contacts = computed((): any[] => {
 
 const socials = computed((): any[] => {
   if (person?.value?.socials) {
-    const list: any[] = [];
-
-    person.value.socials.forEach((el: any) => {
-      list.push({ icon: "mdi-open-in-new", href: el.src, text: el.name, target: "blank" });
+    return person.value.socials.map((el: any) => {
+      return { icon: "mdi-open-in-new", href: el.src, text: el.name, target: "blank" };
     });
-
-    return list;
   }
 
   return [];
