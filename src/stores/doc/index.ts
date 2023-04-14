@@ -5,7 +5,11 @@ import type { Document } from "@/stores/doc/document";
 export const useDocStore = defineStore("doc", () => {
   const innerDoc = ref();
 
-  const recoveryDocument = async (): Promise<void> => {
+  const loadDocument = async (): Promise<void> => {
+    if (innerDoc.value) {
+      return;
+    }
+
     const langs = await fetch("./document.langs.json");
     const langDoc = await langs.json();
 
@@ -19,7 +23,13 @@ export const useDocStore = defineStore("doc", () => {
     innerDoc.value = await refDoc.json() as Document;
   };
 
-  const document = computed((): Document => innerDoc.value as Document);
+  const loaded = computed((): boolean => {
+    return innerDoc.value;
+  });
 
-  return { recoveryDocument, document };
+  const document = computed((): Document => {
+    return innerDoc.value as Document;
+  });
+
+  return { loadDocument, loaded, document };
 });

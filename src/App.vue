@@ -31,10 +31,8 @@
 import { ref } from "vue";
 import { RouterView } from "vue-router";
 import { useInfoStore } from "@/stores/info";
-import { useDocStore } from "@/stores/doc";
 
 const infoStore = useInfoStore();
-const docStore = useDocStore();
 
 const sideBar = ref(true);
 
@@ -45,6 +43,4 @@ const menus: any[] = [
 function changeSidebar(): void {
   sideBar.value = !sideBar.value;
 }
-
-docStore.recoveryDocument().then();
 </script>
