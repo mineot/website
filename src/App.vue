@@ -7,7 +7,7 @@
 
     <v-app-bar elevation="0" class="text-text-app">
       <v-app-bar-nav-icon @click="changeDrawer"></v-app-bar-nav-icon>
-      <v-toolbar-title>{{ $t(info.getTitle) }}</v-toolbar-title>
+      <v-toolbar-title>{{ $t(infoStore.getTitle) }}</v-toolbar-title>
     </v-app-bar>
 
     <v-main class="text-text-body">
@@ -22,14 +22,18 @@
 import { ref } from "vue";
 import { RouterView } from "vue-router";
 import { useInfoStore } from "@/stores/info";
+import { useDocStore } from "@/stores/doc";
 
 import SidebarHead from "@/components/SidebarHead.vue";
 import SidebarMenu from "@/components/SidebarMenu.vue";
 
-const info = useInfoStore();
+const infoStore = useInfoStore();
+const docStore = useDocStore();
 let drawer = ref(true);
 
 function changeDrawer(): void {
   drawer.value = !drawer.value;
 }
+
+docStore.recoveryDocument().then();
 </script>

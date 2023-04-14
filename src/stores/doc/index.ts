@@ -5,7 +5,7 @@ import type { Document } from "@/stores/doc/document";
 export const useDocStore = defineStore("doc", () => {
   let innerDoc: Document;
 
-  const recoveryDocument = async (): Promise<Document> => {
+  const recoveryDocument = async (): Promise<void> => {
     const langs = await fetch("./document.langs.json");
     const langDoc = await langs.json();
 
@@ -16,14 +16,10 @@ export const useDocStore = defineStore("doc", () => {
     }
 
     const refDoc: any = await fetch(`./${langDocKey}`);
-    return await refDoc.json() as Document;
-  };
-
-  const setDocument = (doc: Document) => {
-    innerDoc = doc;
+    innerDoc = await refDoc.json() as Document;
   };
 
   const document = computed((): Document => innerDoc);
 
-  return { recoveryDocument, setDocument, document };
+  return { recoveryDocument, document };
 });
