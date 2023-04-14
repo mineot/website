@@ -6,7 +6,7 @@ import { style } from "@/style";
 import { router } from "@/router";
 import { i18n } from "@/locale";
 
-import document from "@/doc/get-doc-by-current-lang";
+import document from "@/doc/getDocument";
 import App from "@/App.vue";
 
 const app = createApp(App);
