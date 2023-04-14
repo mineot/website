@@ -1,37 +1,33 @@
 <template>
-  <v-row v-if="docStore.loaded" no-gutters>
+  <v-card elevation="0" v-if="docStore.loaded">
+    <v-card-text>
 
-    <v-col class="d-flex pa-2" cols="12" sm="4">
-      <v-avatar :image="person?.photo" class="image-size mx-auto"></v-avatar>
-    </v-col>
+      <v-sheet class="mb-5">
+        <v-avatar :image="person?.photo" class="image-size mx-auto"></v-avatar>
+      </v-sheet>
 
-    <v-col class="pa-2">
+      <v-sheet class="text-h3 mb-5">
+        {{ person?.name }}
+      </v-sheet>
 
-      <div class="text-h3 mb-2">{{ person?.name }}</div>
-
-      <v-row>
-
-        <v-col cols="12" sm="4">
-          <div v-for="(contact, index) in contacts" :key="index" class="mb-2">
-            <v-btn color="secondary" variant="tonal" :prepend-icon="contact.icon" :href="contact.href"
-              :target="contact.target">
-              {{ $t(contact.text) }}
-            </v-btn>
-          </div>
-        </v-col>
-
-        <v-col>
-          <v-btn v-for="(social, index) in socials" :key="index" class="mr-2 mb-2" color="secondary" variant="tonal"
-            :prepend-icon="social.icon" :href="social.src" :target="social.target">
-            {{ social.text }}
+      <v-sheet class="mb-5">
+        <v-sheet v-for="(contact, index) in contacts" :key="index" class="mb-2">
+          <v-btn color="secondary" variant="tonal" :prepend-icon="contact.icon" :href="contact.href"
+            :target="contact.target">
+            {{ $t(contact.text) }}
           </v-btn>
-        </v-col>
+        </v-sheet>
+      </v-sheet>
 
-      </v-row>
+      <v-sheet>
+        <v-btn v-for="(social, index) in socials" :key="index" class="mr-2 mb-2" color="secondary" variant="tonal"
+          :prepend-icon="social.icon" :href="social.src" :target="social.target">
+          {{ social.text }}
+        </v-btn>
+      </v-sheet>
 
-    </v-col>
-
-  </v-row>
+    </v-card-text>
+  </v-card>
 </template>
 
 <script setup lang="ts">
