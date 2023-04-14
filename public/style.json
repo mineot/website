@@ -4,14 +4,18 @@
     "websiteTheme": {
       "dark": true,
       "colors": {
-        "background": "#111",
-        "surface": "#000",
-        "primary": "#CDDC39",
-        "secondary": "#BA68C8",
-        "error": "#E53935",
-        "info": "#2196F3",
-        "success": "#009688",
-        "warning": "#FF6F00"
+        "background": "#222",
+        "surface": "#222",
+        "text-app": "#C3C3C3",
+        "text-title": "#C3C3C3",
+        "text-body": "#C3C3C3",
+        "primary": "#0D47A1",
+        "secondary": "#9E9E9E",
+        "accent": "#9C27B0",
+        "error": "#F44336",
+        "info": "#03A9F4",
+        "success": "#4CAF50",
+        "warning": "#FFEB3B"
       }
     }
   }

@@ -1,6 +1,8 @@
 <template>
-  <div :class="[sizeComputed, 'mb-1']">{{ $t(titleComputed) }}</div>
-  <hr class="mb-6">
+  <div class="text-text-title mb-5">
+    <div :class="[sizeComputed, 'mb-2']">{{ $t(titleComputed) }}</div>
+    <div class="div-h bg-text-title"></div>
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -28,3 +30,9 @@ const sizeComputed = computed((): string => {
   return "text-h4";
 });
 </script>
+
+<style scoped>
+.div-h {
+  padding-bottom: 0.005rem;
+}
+</style>

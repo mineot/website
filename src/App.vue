@@ -5,13 +5,13 @@
       <SidebarMenu></SidebarMenu>
     </v-navigation-drawer>
 
-    <v-app-bar>
+    <v-app-bar elevation="0" class="text-text-app">
       <v-app-bar-nav-icon @click="changeDrawer"></v-app-bar-nav-icon>
       <v-toolbar-title>{{ $t(info.getTitle) }}</v-toolbar-title>
     </v-app-bar>
 
-    <v-main>
-      <v-container>
+    <v-main class="text-text-body">
+      <v-container :fluid="true">
         <RouterView />
       </v-container>
     </v-main>

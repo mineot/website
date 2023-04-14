@@ -1,7 +1,27 @@
 <template>
-  <ProfilePerson></ProfilePerson>
+  <h3>Normal Text</h3>
+  <TitleWidget title="Titles"></TitleWidget>
+  <div v-for="(btn, index) in btns" :key="index" class="mb-2">
+    <v-btn :color="btn.color" class="mr-2" elevation="2">{{ btn.text }}</v-btn>
+    <v-btn :color="btn.color" class="mr-2" variant="tonal">{{ btn.text }}</v-btn>
+    <v-btn :color="btn.color" class="mr-2" variant="plain">{{ btn.text }}</v-btn>
+    <v-btn :color="btn.color" class="mr-2" variant="text">{{ btn.text }}</v-btn>
+    <v-btn :color="btn.color" class="mr-2" variant="outlined">{{ btn.text }}</v-btn>
+  </div>
+  <!-- <ProfilePerson></ProfilePerson> -->
 </template>
 
 <script setup lang="ts">
-import ProfilePerson from "@/components/ProfilePerson.vue";
+// import ProfilePerson from "@/components/ProfilePerson.vue";
+import TitleWidget from "@/widgets/TitleWidget.vue";
+
+const btns = [
+  { color: "primary", text: "Primary" },
+  { color: "secondary", text: "Secondary" },
+  { color: "accent", text: "Accent" },
+  { color: "error", text: "Error" },
+  { color: "info", text: "Info" },
+  { color: "success", text: "Success" },
+  { color: "warning", text: "Warning" },
+];
 </script>
