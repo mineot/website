@@ -10,24 +10,30 @@
         {{ person?.name }}
       </v-sheet>
 
-      <v-sheet class="mb-5">
-        <v-sheet v-for="(contact, index) in contacts" :key="index" class="mb-2">
+      <v-sheet class="mb-2">
+        <v-sheet v-for="(contact, index) in contacts" :key="index" class="mb-3">
           <v-btn color="secondary" variant="tonal" :prepend-icon="contact.icon" :href="contact.href"
-            :target="contact.target">
+            :target="contact.target" size="large">
             {{ $t(contact.text) }}
           </v-btn>
         </v-sheet>
       </v-sheet>
 
-      <v-sheet class="mb-3">
-        <v-btn v-for="(social, index) in socials" :key="index" class="mr-2 mb-2" color="secondary" variant="tonal"
-          :prepend-icon="social.icon" :href="social.src" :target="social.target">
+      <v-sheet class="mb-2">
+        <v-btn v-for="(social, index) in socials" :key="index" class="mr-3 mb-3" color="secondary" variant="tonal"
+          :prepend-icon="social.icon" :href="social.src" :target="social.target" stacked>
           {{ social.text }}
         </v-btn>
       </v-sheet>
 
       <v-sheet>
-        {{ person?.languages }}
+        <v-sheet v-for="(language, index) in languages" :key="index" class="mb-5">
+          <v-sheet class="d-flex">
+            <span class="text-h6 text-secondary me-auto">{{ language.name }}</span>
+            <v-rating :model-value="language.level" color="accent" size="x-small"></v-rating>
+          </v-sheet>
+          <div class="bg-secondary divider-h"></div>
+        </v-sheet>
       </v-sheet>
 
     </v-card-text>
@@ -68,6 +74,14 @@ const socials = computed((): any[] => {
     return person.value.socials.map((el: any) => {
       return { icon: "mdi-open-in-new", href: el.src, text: el.name, target: "blank" };
     });
+  }
+
+  return [];
+});
+
+const languages = computed((): any[] => {
+  if (person?.value?.languages) {
+    return person.value.languages;
   }
 
   return [];

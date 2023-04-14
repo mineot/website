@@ -1,1 +1,5 @@
 @import './base.css';
+
+div .divider-h {
+  padding-bottom: 0.005rem;
+}
