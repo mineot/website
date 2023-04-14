@@ -1,6 +1,6 @@
 <template>
   <div class="pa-3">
-    <v-btn v-for="(menu, index) in menuList" :key="index" :to="menu.path" variant="tonal" block>
+    <v-btn v-for="(menu, index) in menuList" :key="index" :to="menu.path" color="link" variant="text" block>
       {{ $t(menu.text) }}
     </v-btn>
   </div>

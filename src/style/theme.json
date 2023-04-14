@@ -12,6 +12,7 @@
         "primary": "#0D47A1",
         "secondary": "#9E9E9E",
         "accent": "#9C27B0",
+        "link": "#F48FB1",
         "error": "#F44336",
         "info": "#03A9F4",
         "success": "#4CAF50",
