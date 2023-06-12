@@ -1,11 +1,4 @@
 {
-  "bio": "Biography",
-  "profile": "Professional Profile",
-  "website": "Website",
-  "contacts": {
-    "email": "Send an Email",
-    "phone": "Making a Call",
-    "whatsapp": "WhatsApp",
-    "telegram": "Telegram"
-  }
+  "profile": "Profile",
+  "website":"Website"
 }

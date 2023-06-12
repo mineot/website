@@ -6,9 +6,6 @@
       "colors": {
         "background": "#222",
         "surface": "#222",
-        "text-app": "#C3C3C3",
-        "text-title": "#C3C3C3",
-        "text-body": "#C3C3C3",
         "primary": "#0D47A1",
         "secondary": "#9E9E9E",
         "accent": "#9C27B0",
