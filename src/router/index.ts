@@ -10,6 +10,10 @@ const RoutePathTitle = {
   [RoutePath.PROFILE]: "profile",
 };
 
+const RouteMenu: any[] = [
+  { path: RoutePath.PROFILE, text: "profile" }
+];
+
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -27,4 +31,4 @@ router.beforeEach((to: any) => {
   return true;
 });
 
-export { router };
+export { router, RouteMenu };
