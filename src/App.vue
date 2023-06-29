@@ -3,9 +3,9 @@
 
     <v-navigation-drawer v-model="sideBar">
 
-      <v-img class="mb-2" max-height="80" src="logo.png"></v-img>
+      <v-img class="my-4" max-height="80" src="logo.png"></v-img>
 
-      <div v-for="(menu, index) in RouteMenu" :key="index" class="mx-2">
+      <div v-for="(menu, index) in RouteMenu" :key="index" class="mx-2 py-1">
         <v-btn :to="menu.path" color="link" variant="text" block>
           {{ $t(menu.text) }}
         </v-btn>
@@ -31,7 +31,7 @@
 import { ref } from "vue";
 import { RouterView } from "vue-router";
 import { useInfoStore } from "@/stores/info";
-import { RouteMenu } from "@/router"
+import { RouteMenu } from "@/router";
 
 const info = useInfoStore();
 const sideBar = ref(true);
