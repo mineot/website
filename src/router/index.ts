@@ -28,7 +28,10 @@ const router = createRouter({
 router.beforeEach((to: any) => {
   const info = useInfoStore();
   info.changeTitle(RoutePathTitle[to.path]);
+  if (info.isEmptyMenu) {
+    RouteMenu.forEach((el: any) => info.addMenu(el.path, el.text));
+  }
   return true;
 });
 
-export { router, RouteMenu };
+export { router };
