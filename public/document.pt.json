@@ -1,37 +1,6 @@
 {
-  "person": {
-    "photo": "https://placehold.co/600x400",
-    "name": "Seu Nome",
-    "bio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum viverra odio at quam rhoncus volutpat quis sed mi. Phasellus quis malesuada ex. Maecenas elementum mi nec iaculis hendrerit. Praesent facilisis neque nec ex venenatis tempus. Maecenas interdum mi id pretium finibus. Ut egestas dignissim urna, nec luctus diam bibendum quis. Integer nec porta nisl, mattis elementum ligula. Ut porttitor eu est et auctor. Vivamus in elit vitae justo venenatis malesuada. Cras laoreet consectetur pharetra. Praesent et consequat est, vitae elementum lectus. Integer elementum dui eget orci ornare sollicitudin. Pellentesque nec tortor nec nisi vestibulum eleifend blandit a lorem. Ut sed finibus ante, eget varius tortor. Nam dictum in tortor vel iaculis. Maecenas pretium urna ac est ullamcorper, non vestibulum lorem vulputate.",
-    "contact": {
-      "email": "contact@email.com",
-      "phone": "00 11 2222 3333",
-      "whatsapp": "@link_whatsapp",
-      "telegram": "@link_telegram"
-    },
-    "socials": [
-      {
-        "name": "Social 1",
-        "src": "@social1"
-      },
-      {
-        "name": "Social 2",
-        "src": "@social2"
-      },
-      {
-        "name": "Social 3",
-        "src": "@social3"
-      }
-    ],
-    "languages": [
-      {
-        "name": "Idioma 1",
-        "level": 3
-      },
-      {
-        "name": "Idioma 2",
-        "level": 1
-      }
-    ]
-  }
+  "photo": "https://placehold.co/600x400",
+  "name": "Seu Nome",
+  "title": "Seu Titulo Professional",
+  "bio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum viverra odio at quam rhoncus volutpat quis sed mi. Phasellus quis malesuada ex. Maecenas elementum mi nec iaculis hendrerit. Praesent facilisis neque nec ex venenatis tempus. Maecenas interdum mi id pretium finibus. Ut egestas dignissim urna, nec luctus diam bibendum quis. Integer nec porta nisl, mattis elementum ligula. Ut porttitor eu est et auctor. Vivamus in elit vitae justo venenatis malesuada. Cras laoreet consectetur pharetra. Praesent et consequat est, vitae elementum lectus. Integer elementum dui eget orci ornare sollicitudin. Pellentesque nec tortor nec nisi vestibulum eleifend blandit a lorem. Ut sed finibus ante, eget varius tortor. Nam dictum in tortor vel iaculis. Maecenas pretium urna ac est ullamcorper, non vestibulum lorem vulputate."
 }
