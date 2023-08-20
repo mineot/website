@@ -1,0 +1,23 @@
+@import "../node_modules/bootstrap/scss/mixins";
+@import "../node_modules/bootstrap/scss/functions";
+@import "../node_modules/bootstrap/scss/variables";
+
+$backgroud: shade-color($indigo, 90%);
+$color: $gray-600;
+
+$primary: $indigo-900;
+$secondary: $orange-400;
+$dark: $indigo-800;
+
+$theme-colors: (
+  "primary": $primary,
+  "secondary": $secondary,
+  "dark": $dark,
+  "success": $success,
+  "info": $info,
+  "warning": $warning,
+  "danger": $danger,
+  "light": $light,
+);
+
+@import "../node_modules/bootstrap/scss/bootstrap.scss";

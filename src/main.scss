@@ -1,4 +1,6 @@
+@import "./assets/configuration.scss";
+
 body {
-  color: #888;
-  background-color: #222;
+  color: $color !important;
+  background-color: $backgroud !important;
 }
