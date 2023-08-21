@@ -1,0 +1,66 @@
+$layout-def-h100: 100vh;
+$layout-def-margin: 0em;
+$layout-def-overflow-y: auto;
+$layout-def-overflow: hidden;
+$layout-def-padding: 0em;
+$layout-head-height: 3.7em;
+$layout-panel-padding-bottom: $layout-head-height;
+$layout-sidebar-backgroud: $primary;
+$layout-sidebar-width: 18em;
+
+.layout {
+  display: flex;
+  flex-direction: column;
+  height: $layout-def-h100;
+  margin: $layout-def-margin;
+  overflow: $layout-def-overflow;
+  padding: $layout-def-padding;
+
+  .head {
+    @extend .d-lg-none;
+    height: $layout-head-height;
+  }
+
+  .body {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    height: $layout-def-h100;
+    margin: $layout-def-margin;
+    overflow: $layout-def-overflow;
+    padding: $layout-def-padding;
+
+    .body-content {
+      display: flex;
+      flex-direction: row;
+      height: $layout-def-h100;
+      margin: $layout-def-margin;
+      overflow: $layout-def-overflow;
+      padding: $layout-def-padding;
+
+      .sidebar {
+        @extend .p-2;
+        @extend .d-none;
+        @extend .d-lg-block;
+        background-color: $layout-sidebar-backgroud;
+        overflow: $layout-def-overflow;
+        overflow-y: $layout-def-overflow-y;
+        width: $layout-sidebar-width;
+      }
+
+      .panel {
+        @extend .pt-2;
+        flex: 1;
+        margin: $layout-def-margin;
+        overflow: $layout-def-overflow;
+        overflow-y: $layout-def-overflow-y;
+        padding: $layout-def-padding;
+        padding-bottom: $layout-panel-padding-bottom;
+
+        div {
+          @extend .container;
+        }
+      }
+    }
+  }
+}

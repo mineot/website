@@ -24,7 +24,9 @@
       "@assets/*": ["./src/assets/*"],
       "@core/*": ["./src/core/*"],
       "@helpers/*": ["./src/helpers/*"],
-      "@views/*": ["./src/views/*"]
+      "@views/*": ["./src/views/*"],
+      "@components/*": ["./src/views/components/*"] ,
+      "@widgets/*": ["./src/views/widgets/*"]
     }
   },
   "include": ["src"],
