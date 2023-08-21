@@ -7,7 +7,7 @@ export default function App() {
   return (
     <div>
       <h1>Website: Vite + React + TS</h1>
-      <h2>{t("Welcome to React")}</h2>
+      <h2>{t("welcome")}</h2>
       <Router />
     </div>
   );
