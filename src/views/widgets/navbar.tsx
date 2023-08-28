@@ -1,3 +1,4 @@
+import { document } from "@/core/doc";
 import { Offcanvas } from "./offcanvas";
 
 export function Navbar() {
@@ -5,17 +6,17 @@ export function Navbar() {
     <nav className="navbar bg-primary">
       <div className="container-fluid">
         <a className="navbar-brand text-secondary" href="/">
-          Website
+          {document.name}
         </a>
         <button
-          className="navbar-toggler border border-secondary"
+          className="navbar-toggler border-0"
           type="button"
           data-bs-toggle="offcanvas"
           data-bs-target="#navbarOffcanvas"
           aria-controls="navbarOffcanvas"
           aria-label="Toggle navigation"
         >
-          <i className="bi bi-list text-secondary toggle"></i>
+          <i className="bi bi-three-dots-vertical text-secondary"></i>
         </button>
         <Offcanvas />
       </div>

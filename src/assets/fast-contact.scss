@@ -1,0 +1,10 @@
+.fast-contacts {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+
+  .fast-contact-item {
+    text-align: center;
+    flex: 1;
+  }
+}

@@ -1,7 +1,12 @@
 @import "./assets/configuration.scss";
 @import "./assets/layout.scss";
+@import "./assets/fast-contact.scss";
 
 body {
   color: $color !important;
   background-color: $backgroud !important;
+}
+
+.text-color {
+  color: $color;
 }
