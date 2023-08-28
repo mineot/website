@@ -1,7 +1,7 @@
 import { DocumentFacade } from "@/core/doc/document";
 
 export const DefaultDocument: DocumentFacade = {
-  name: "Joe Due",
+  name: "John Doe",
   photo: "https://placehold.co/800x600",
   title: "Job Title",
   summary:

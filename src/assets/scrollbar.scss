@@ -1,0 +1,28 @@
+$scrollbar-color: shift-color($dark, 0%);
+$scrollbar-size: 0.4em;
+$scrollbar-thin: thin;
+
+/* For WebKit-based browsers */
+/* Customize the scroll bar track */
+div::-webkit-scrollbar {
+  width: $scrollbar-size;
+  /* Track width */
+}
+
+/* Customize the scroll bar thumb (handle) */
+div::-webkit-scrollbar-thumb {
+  background-color: $scrollbar-color;
+  /* Scroll bar handle color */
+}
+
+/* For Firefox browsers */
+/* Specify the scrollbar width to work on Firefox */
+div {
+  scrollbar-width: $scrollbar-thin;
+}
+
+/* Customize the scroll bar thumb (handle) in Firefox */
+div::-webkit-scrollbar-thumb {
+  background-color: $scrollbar-color;
+  /* Scroll bar handle color */
+}
