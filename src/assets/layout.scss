@@ -1,65 +1,52 @@
-$layout-def-h100: 100vh;
-$layout-def-margin: 0em;
-$layout-def-overflow-y: auto;
-$layout-def-overflow: hidden;
-$layout-def-padding: 0em;
-$layout-head-height: 3.7em;
-$layout-panel-padding-bottom: $layout-head-height;
-$layout-sidebar-backgroud: $primary;
-$layout-sidebar-width: 350px;
+$width: 100vw;
+$height: 100vh;
+
+$head-height: 35px;
+$sidebar-width: 250px;
+
+body {
+  color: $color !important;
+  background-color: $backgroud !important;
+}
 
 .layout {
+  height: $height;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
-  height: $layout-def-h100;
-  margin: $layout-def-margin;
-  overflow: $layout-def-overflow;
-  padding: $layout-def-padding;
 
   .head {
-    @extend .d-lg-none;
-    height: $layout-head-height;
+    flex: 0;
+
+    .head-container {
+      height: $head-height;
+      color: $color !important;
+      background-color: $primary !important;
+    }
   }
 
   .body {
     flex: 1;
-    display: flex;
-    flex-direction: row;
-    height: $layout-def-h100;
-    margin: $layout-def-margin;
-    overflow: $layout-def-overflow;
-    padding: $layout-def-padding;
 
-    .body-content {
+    .body-container {
+      height: calc($height - $head-height);
       display: flex;
       flex-direction: row;
-      height: $layout-def-h100;
-      margin: $layout-def-margin;
-      overflow: $layout-def-overflow;
-      padding: $layout-def-padding;
 
       .sidebar {
-        @extend .p-2;
-        @extend .d-none;
-        @extend .d-lg-block;
-        background-color: $layout-sidebar-backgroud;
-        overflow: $layout-def-overflow;
-        overflow-y: $layout-def-overflow-y;
-        width: $layout-sidebar-width;
+        flex: 0;
+
+        .sidebar-container {
+          width: $sidebar-width;
+          height: calc($height - $head-height);
+          color: $color !important;
+          background-color: $primary !important;
+          overflow-y: auto;
+        }
       }
 
-      .panel {
-        @extend .pt-2;
+      .content {
         flex: 1;
-        margin: $layout-def-margin;
-        overflow: $layout-def-overflow;
-        overflow-y: $layout-def-overflow-y;
-        padding: $layout-def-padding;
-        padding-bottom: $layout-panel-padding-bottom;
-
-        div {
-          @extend .container;
-        }
       }
     }
   }
