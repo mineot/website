@@ -1,8 +1,8 @@
 $width: 100vw;
 $height: 100vh;
 
-$head-height: 60px;
-$sidebar-width: 250px;
+$top-height: 60px;
+$left-width: 320px;
 
 body {
   overflow: hidden;
@@ -24,12 +24,12 @@ body {
       flex-direction: row;
       height: $height;
 
-      .sidebar {
+      .left {
         flex: 0;
 
-        .sidebar-container {
+        .left-container {
           height: $height;
-          width: $sidebar-width;
+          width: $left-width;
           overflow-y: auto;
           background-color: $primary !important;
         }
@@ -55,11 +55,11 @@ body {
       flex-direction: column;
       height: $height;
 
-      .head {
+      .top {
         flex: 0;
 
-        .head-container {
-          height: $head-height;
+        .top-container {
+          height: $top-height;
           background-color: $primary !important;
         }
       }
@@ -68,7 +68,7 @@ body {
         flex: 1;
 
         .body-container {
-          height: calc($height - $head-height);
+          height: calc($height - $top-height);
           overflow-y: auto;
         }
       }
