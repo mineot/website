@@ -1,52 +1,76 @@
 $width: 100vw;
 $height: 100vh;
 
-$head-height: 35px;
+$head-height: 60px;
 $sidebar-width: 250px;
 
 body {
+  overflow: hidden;
   color: $color !important;
-  background-color: $backgroud !important;
+  background-color: $background !important;
 }
 
 .layout {
-  height: $height;
   overflow: hidden;
-  display: flex;
-  flex-direction: column;
+  height: $height;
 
-  .head {
-    flex: 0;
+  .large {
+    @extend .d-none;
+    @extend .d-lg-block;
+    height: $height;
 
-    .head-container {
-      height: $head-height;
-      color: $color !important;
-      background-color: $primary !important;
-    }
-  }
-
-  .body {
-    flex: 1;
-
-    .body-container {
-      height: calc($height - $head-height);
+    .large-container {
       display: flex;
       flex-direction: row;
+      height: $height;
 
       .sidebar {
         flex: 0;
 
         .sidebar-container {
+          height: $height;
           width: $sidebar-width;
-          height: calc($height - $head-height);
-          color: $color !important;
-          background-color: $primary !important;
           overflow-y: auto;
+          background-color: $primary !important;
         }
       }
 
-      .content {
+      .body {
         flex: 1;
+
+        .body-container {
+          height: $height;
+          overflow-y: auto;
+        }
+      }
+    }
+  }
+
+  .medium {
+    @extend .d-lg-none;
+    height: $height;
+
+    .medium-container {
+      display: flex;
+      flex-direction: column;
+      height: $height;
+
+      .head {
+        flex: 0;
+
+        .head-container {
+          height: $head-height;
+          background-color: $primary !important;
+        }
+      }
+
+      .body {
+        flex: 1;
+
+        .body-container {
+          height: calc($height - $head-height);
+          overflow-y: auto;
+        }
       }
     }
   }
