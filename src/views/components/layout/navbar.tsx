@@ -1,16 +1,20 @@
 export function Navbar() {
   return (
-    <div>
-      <span>Head</span>
-      <button
-        type="button"
-        className="btn btn-secondary"
-        data-bs-toggle="offcanvas"
-        data-bs-target="#offCanvasWebsite"
-        aria-controls="offCanvasWebsite"
-      >
-        Open Offcanvas
-      </button>
-    </div>
+    <nav className="navbar bg-primary">
+      <div className="container-fluid">
+        <a className="navbar-brand text-secondary">Navbar</a>
+        <div className="d-flex">
+          <button
+            type="button"
+            className="btn btn-lg btn-link text-secondary"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#offCanvasWebsite"
+            aria-controls="offCanvasWebsite"
+          >
+            <i className="bi bi-three-dots-vertical"></i>
+          </button>
+        </div>
+      </div>
+    </nav>
   );
 }
