@@ -1,6 +1,6 @@
-import { DocumentFacade } from "@/core/doc/document";
+import { Document } from "@/core/doc/document";
 
-export const DefaultDocument: DocumentFacade = {
+export const DefaultDocument: Document = {
   name: "John Doe",
   photo: "https://placehold.co/800x600",
   title: "Job Title",

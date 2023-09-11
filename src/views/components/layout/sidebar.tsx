@@ -1,3 +1,5 @@
+import { document } from "@/core/doc";
+
 export interface Props {
   showClose?: boolean;
 }
@@ -22,7 +24,9 @@ export function Sidebar(props: Props) {
     <div className="sidebar">
       <div className="header">
         <div className="header-container">
-          <div className="title">Title</div>
+          <div className="title">
+            <span>{document.name}</span>
+          </div>
           <div className="close">{buttons}</div>
         </div>
       </div>

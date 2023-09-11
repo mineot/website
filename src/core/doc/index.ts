@@ -1,6 +1,6 @@
 import { DefaultDocument } from "@/core/doc/default-doc";
-import { DocumentFacade } from "@/core/doc/document";
+import { Document } from "@/core/doc/document";
 
-const document: DocumentFacade = DefaultDocument;
+const document: Document = DefaultDocument;
 
 export { document };

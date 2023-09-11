@@ -1,13 +1,15 @@
-export interface DocumentFacade {
+interface FastContact {
+  name?: string;
+  icon?: string;
+  key: string;
+  url: string;
+  outside: boolean;
+}
+
+export interface Document {
   name: string;
   photo: string;
   title: string;
   summary: string;
-  fastContact: Array<{
-    name?: string;
-    icon?: string;
-    key: string;
-    url: string;
-    outside: boolean;
-  }>;
+  fastContact: Array<FastContact>;
 }

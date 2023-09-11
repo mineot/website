@@ -125,14 +125,14 @@ div::-webkit-scrollbar-thumb {
       flex-direction: row;
 
       .title {
-        @extend .h1;
+        @extend .h3;
         @extend .text-secondary;
-        flex: 0;
+        flex: 1;
       }
 
       .close {
         text-align: end;
-        flex: 1;
+        flex: 0;
       }
     }
   }

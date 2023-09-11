@@ -1,8 +1,12 @@
+import { document } from "@/core/doc";
+
 export function Navbar() {
   return (
     <nav className="navbar bg-primary">
       <div className="container-fluid">
-        <a className="navbar-brand text-secondary">Navbar</a>
+        <a className="navbar-brand text-secondary">
+          <span>{document.name}</span>
+        </a>
         <div className="d-flex">
           <button
             type="button"
