@@ -6,7 +6,7 @@ export const DefaultDocument: Document = {
   title: "Job Title",
   summary:
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus iaculis eget dui vel egestas. Sed id purus eget nulla convallis.",
-  fastContact: [
+  fastContacts: [
     {
       name: "E-mail",
       icon: "bi bi-envelope-at-fill",

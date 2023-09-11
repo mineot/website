@@ -1,10 +1,10 @@
 .fast-contacts {
+  @extend .mt-4;
   display: flex;
   flex-direction: row;
-  width: 100%;
 
   .fast-contact-item {
-    text-align: center;
-    flex: 1;
+    @extend .me-4;
+    flex: 0;
   }
 }

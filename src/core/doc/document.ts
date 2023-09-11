@@ -11,5 +11,5 @@ export interface Document {
   photo: string;
   title: string;
   summary: string;
-  fastContact: Array<FastContact>;
+  fastContacts: Array<FastContact>;
 }

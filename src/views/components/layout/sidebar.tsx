@@ -5,20 +5,34 @@ export interface Props {
 }
 
 export function Sidebar(props: Props) {
-  const buttons = [];
+  let buttons: any = "";
+  let fastContactItems: any = [];
 
   if (props.showClose) {
-    buttons.push(
+    buttons = (
       <button
         type="button"
-        className="btn btn-secondary float-end"
+        className="btn btn-link text-secondary float-end"
         data-bs-dismiss="offcanvas"
-        key={new Date().getTime()}
       >
         <i className="bi bi-x-lg"></i>
-      </button>,
+      </button>
     );
   }
+
+  fastContactItems = document.fastContacts.map((item: any) => {
+    return (
+      <div className="fast-contact-item" key={item.key}>
+        <a
+          href={item.url}
+          className="btn btn-secondary"
+          target={item.outside ? "_blank" : ""}
+        >
+          <i className={item.icon}></i>
+        </a>
+      </div>
+    );
+  });
 
   return (
     <div className="sidebar">
@@ -30,7 +44,17 @@ export function Sidebar(props: Props) {
           <div className="close">{buttons}</div>
         </div>
       </div>
-      <div className="body">Body</div>
+      <div className="body">
+        <div>
+          <img
+            className="img-fluid img-thumbnail w-75"
+            src={document.photo}
+            alt={document.name}
+          />
+        </div>
+        <div className="mt-2">{document.summary}</div>
+        <div className="fast-contacts">{fastContactItems}</div>
+      </div>
     </div>
   );
 }
