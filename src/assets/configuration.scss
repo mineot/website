@@ -2,11 +2,11 @@
 @import "../node_modules/bootstrap/scss/functions";
 @import "../node_modules/bootstrap/scss/variables";
 
-$background: #222;
-$color: #555;
+$background: $gray-900;
+$color: $gray-600;
 
 $primary: $black;
-$secondary: $yellow;
+$secondary: $yellow-600;
 $dark: $cyan-800;
 $light: $green-400;
 

@@ -11,7 +11,7 @@ export function Layout(props: PropsWithChildren<LayoutProps>) {
       <div className="large-container">
         <div className="left">
           <div className="left-container">
-            <Sidebar />
+            <Sidebar showClose={false} />
           </div>
         </div>
         <div className="body">
