@@ -5,7 +5,9 @@ export interface Props {
 }
 
 function CloseButton(props: Props) {
-  if (props.showClose) {
+  const { showClose } = props;
+
+  if (showClose) {
     return (
       <div className="close">
         <button
@@ -23,51 +25,66 @@ function CloseButton(props: Props) {
 }
 
 function Header(props: Props) {
+  const { name } = document;
+  const { showClose } = props;
+
   return (
     <div className="header">
       <div className="header-container">
         <div className="title">
-          <span>{document.name}</span>
+          <span>{name}</span>
         </div>
-        <CloseButton showClose={props.showClose} />
+        <CloseButton showClose={showClose} />
       </div>
     </div>
   );
 }
 
-export function Sidebar(props: Props) {
-  const fastContactItems = document.fastContacts.map((item: any) => {
-    return (
-      <div className="fast-contact-item" key={item.key}>
-        <a
-          href={item.url}
-          className="btn btn-secondary"
-          target={item.outside ? "_blank" : ""}
-        >
-          <i className={item.icon}></i>
-        </a>
-      </div>
-    );
-  });
+function FastContactItem(props: any) {
+  const { item } = props;
+  const { url, icon, outside } = item;
+  const target = outside ? "_blank" : "";
 
-  const body = (
-    <div className="body">
-      <div>
-        <img
-          className="img-fluid img-thumbnail w-75"
-          src={document.photo}
-          alt={document.name}
-        />
-      </div>
-      <div className="mt-2">{document.summary}</div>
-      <div className="fast-contacts">{fastContactItems}</div>
+  return (
+    <div className="fast-contact-item">
+      <a href={url} className="btn btn-secondary" target={target}>
+        <i className={icon}></i>
+      </a>
     </div>
   );
+}
+
+function FastContacts() {
+  const { fastContacts } = document;
+
+  const items = fastContacts.map((item: any) => {
+    return <FastContactItem key={item.key} item={item} />;
+  });
+
+  return <div className="fast-contacts">{items}</div>;
+}
+
+function Body() {
+  const { name, photo, summary } = document;
+
+  return (
+    <div className="body">
+      <div>
+        <img className="img-fluid img-thumbnail w-50" src={photo} alt={name} />
+      </div>
+      <div className="mt-2">{summary}</div>
+      <FastContacts />
+    </div>
+  );
+}
+
+export function Sidebar(props: Props) {
+  const { showClose } = props;
 
   return (
     <div className="sidebar">
-      <Header showClose={props.showClose} />
-      {body}
+      <Header showClose={showClose} />
+      <Body />
     </div>
   );
 }
