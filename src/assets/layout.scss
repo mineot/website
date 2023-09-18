@@ -9,7 +9,7 @@ $left-width: 320px;
 
 $sidebar-header-height: 50px;
 
-// GENERAL'S
+// ALL
 
 body {
   overflow: hidden;
@@ -133,6 +133,13 @@ div::-webkit-scrollbar-thumb {
       .close {
         text-align: end;
         flex: 0;
+
+        .close-btn {
+          @extend .btn;
+          @extend .btn-link;
+          @extend .text-secondary;
+          @extend .float-end;
+        }
       }
     }
   }
@@ -141,5 +148,32 @@ div::-webkit-scrollbar-thumb {
     flex: 1;
     height: $height;
     overflow-y: auto;
+
+    .photo {
+      @extend .img-fluid;
+      @extend .img-thumbnail;
+      @extend .w-75;
+    }
+
+    .summary {
+      @extend .mt-1;
+      @extend .h6;
+    }
+
+    .fast-contacts {
+      @extend .mt-3;
+      display: flex;
+      flex-direction: row;
+
+      .fast-contact-item {
+        @extend .me-4;
+        flex: 0;
+
+        .fast-contact-btn {
+          @extend .btn;
+          @extend .btn-secondary;
+        }
+      }
+    }
   }
 }

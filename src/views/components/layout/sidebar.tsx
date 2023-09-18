@@ -10,11 +10,7 @@ function CloseButton(props: Props) {
   if (showClose) {
     return (
       <div className="close">
-        <button
-          type="button"
-          className="btn btn-link text-secondary float-end"
-          data-bs-dismiss="offcanvas"
-        >
+        <button type="button" className="close-btn" data-bs-dismiss="offcanvas">
           <i className="bi bi-x-lg"></i>
         </button>
       </div>
@@ -47,7 +43,7 @@ function FastContactItem(props: any) {
 
   return (
     <div className="fast-contact-item">
-      <a href={url} className="btn btn-secondary" target={target}>
+      <a href={url} className="fast-contact-btn" target={target}>
         <i className={icon}></i>
       </a>
     </div>
@@ -70,9 +66,9 @@ function Body() {
   return (
     <div className="body">
       <div>
-        <img className="img-fluid img-thumbnail w-50" src={photo} alt={name} />
+        <img className="photo" src={photo} alt={name} />
       </div>
-      <div className="mt-2">{summary}</div>
+      <div className="summary">{summary}</div>
       <FastContacts />
     </div>
   );
