@@ -5,8 +5,10 @@ import { Sidebar } from "./sidebar";
 
 type LayoutProps = {};
 
-export function Layout(props: PropsWithChildren<LayoutProps>) {
-  const large = (
+function Large(props: PropsWithChildren<LayoutProps>) {
+  const { children } = props;
+
+  return (
     <div className="large">
       <div className="large-container">
         <div className="left">
@@ -17,15 +19,19 @@ export function Layout(props: PropsWithChildren<LayoutProps>) {
         <div className="body">
           <div className="body-container">
             <div className="container-fluid">
-              <div>{props.children}</div>
+              <div>{children}</div>
             </div>
           </div>
         </div>
       </div>
     </div>
   );
+}
 
-  const medium = (
+function Medium(props: PropsWithChildren<LayoutProps>) {
+  const { children } = props;
+
+  return (
     <div className="medium">
       <div className="medium-container">
         <div className="top">
@@ -36,7 +42,7 @@ export function Layout(props: PropsWithChildren<LayoutProps>) {
         <div className="body">
           <div className="body-container">
             <div className="container">
-              <div>{props.children}</div>
+              <div>{children}</div>
             </div>
           </div>
         </div>
@@ -44,11 +50,15 @@ export function Layout(props: PropsWithChildren<LayoutProps>) {
       <OffCanvas />
     </div>
   );
+}
+
+export function Layout(props: PropsWithChildren<LayoutProps>) {
+  const { children } = props;
 
   return (
     <div className="layout">
-      {large}
-      {medium}
+      <Large>{children}</Large>
+      <Medium>{children}</Medium>
     </div>
   );
 }

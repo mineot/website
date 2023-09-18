@@ -1,11 +1,13 @@
 import { document } from "@/core/doc";
 
 export function Navbar() {
+  const { name } = document;
+
   return (
     <nav className="navbar bg-primary">
       <div className="container-fluid">
         <a className="navbar-brand text-secondary">
-          <span>{document.name}</span>
+          <span>{name}</span>
         </a>
         <div className="d-flex">
           <button
