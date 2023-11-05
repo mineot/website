@@ -1,0 +1,50 @@
+@mixin app {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  overflow: hidden;
+}
+
+@mixin header {
+  flex: 0;
+  padding: 2px;
+  border: 1px solid #ccc;
+}
+
+@mixin body {
+  flex: 1;
+  padding: 2px;
+  border: 1px solid #ccc;
+}
+
+// SMALL
+@media screen and (max-width: 768px) {
+  .app {
+    @include app;
+    flex-direction: column;
+
+    .header {
+      @include header;
+    }
+
+    .body {
+      @include body;
+    }
+  }
+}
+
+// LARGE
+@media screen and (min-width: 768px) {
+  .app {
+    @include app;
+    flex-direction: row;
+
+    .header {
+      @include header;
+    }
+
+    .body {
+      @include body;
+    }
+  }
+}
