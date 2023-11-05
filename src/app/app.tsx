@@ -16,9 +16,9 @@ export default function App() {
       <div className="body">
         <div className="container">
           <BrowserRouter>
-            <Routes>{routeAnchors}</Routes>
+            <Routes>{routeAnchors()}</Routes>
           </BrowserRouter>
-          <div>{links}</div>
+          <div>{links()}</div>
         </div>
       </div>
     </div>

@@ -1,24 +1,33 @@
 import { Route } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
-const routeItems = [
-  { key: 1, to: "/", text: "About Me" },
-  { key: 2, to: "/portfolio", text: "Portfolio" },
-  { key: 3, to: "/service_pricing", text: "Services & Prices" },
-  { key: 4, to: "/resume", text: "Resume" },
-  { key: 5, to: "/blog", text: "Blog" },
-  { key: 6, to: "/contact", text: "Contact" },
+const routes = [
+  { key: 1, to: "/", text: "menu.about_me" },
+  { key: 2, to: "/portfolio", text: "menu.portfolio" },
+  { key: 3, to: "/service_pricing", text: "menu.services_prices" },
+  { key: 4, to: "/resume", text: "menu.resume" },
+  { key: 5, to: "/blog", text: "menu.blog" },
+  { key: 6, to: "/contact", text: "menu.contact" },
 ];
 
-const routeAnchors = routeItems.map((item: any) => (
-  <Route key={item.key} path={item.to} element={<h4>{item.text}</h4>} />
-));
+function routeAnchors() {
+  const { t } = useTranslation();
 
-const links = routeItems.map((item: any) => (
-  <div key={item.key} className="mb-2">
-    <a href={item.to} className="btn btn-outline-primary">
-      <span>{item.text}</span>
-    </a>
-  </div>
-));
+  return routes.map((item: any) => (
+    <Route key={item.key} path={item.to} element={<h2>{t(item.text)}</h2>} />
+  ));
+}
+
+function links() {
+  const { t } = useTranslation();
+
+  return routes.map((item: any) => (
+    <div key={item.key} className="mb-2">
+      <a href={item.to} className="btn btn-outline-primary">
+        <span>{t(item.text)}</span>
+      </a>
+    </div>
+  ));
+}
 
 export { links, routeAnchors };
