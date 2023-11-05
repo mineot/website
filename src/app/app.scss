@@ -1,3 +1,11 @@
+$border-size: 1px;
+$border-style: solid;
+$border-color: #555;
+
+@mixin border {
+  border: $border-size $border-style $border-color;
+}
+
 @mixin app {
   width: 100vw;
   height: 100vh;
@@ -6,15 +14,15 @@
 }
 
 @mixin header {
+  @include border;
   flex: 0;
   padding: 2px;
-  border: 1px solid #ccc;
 }
 
 @mixin body {
+  @include border;
   flex: 1;
   padding: 2px;
-  border: 1px solid #ccc;
 }
 
 // SMALL
@@ -25,6 +33,14 @@
 
     .header {
       @include header;
+
+      .topbar {
+        display: block;
+      }
+
+      .sidebar {
+        display: none;
+      }
     }
 
     .body {
@@ -41,6 +57,14 @@
 
     .header {
       @include header;
+
+      .topbar {
+        display: none;
+      }
+
+      .sidebar {
+        display: block;
+      }
     }
 
     .body {
