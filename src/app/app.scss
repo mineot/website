@@ -16,13 +16,12 @@ $border-color: #555;
 @mixin header {
   @include border;
   flex: 0;
-  padding: 2px;
 }
 
 @mixin body {
   @include border;
+  overflow-y: auto;
   flex: 1;
-  padding: 2px;
 }
 
 // SMALL
@@ -64,6 +63,9 @@ $border-color: #555;
 
       .sidebar {
         display: block;
+        overflow-y: auto;
+        overflow-x: hidden;
+        height: 100%;
       }
     }
 
