@@ -7,7 +7,7 @@ export default {
       about_me: "Sobre Mim",
       portfolio: "Portifólio",
       services_prices: "Serviços e Preços",
-      resume: "Curriculo",
+      resume: "Currículo",
       blog: "Blog",
       contact: "Contato",
     },

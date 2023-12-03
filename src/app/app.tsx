@@ -1,17 +1,21 @@
+import { Navbar } from "./widgets/navbar";
+import { RoutePoints, Menus } from "./core/routes";
 import "./app.scss";
-import { Routes } from "react-router-dom";
-import { routes, links } from "./widgets/routes";
 
 export default function App() {
   return (
     <div className="app">
       <div className="header">
-        <div className="topbar">Topbar</div>
-        <div className="sidebar">{links()}</div>
+        <div className="topbar">
+          <Navbar />
+        </div>
+        <div className="sidebar">
+          <Menus />
+        </div>
       </div>
       <div className="body">
         <div className="container">
-          <Routes>{routes()}</Routes>
+          <RoutePoints />
         </div>
       </div>
     </div>
