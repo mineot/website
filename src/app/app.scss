@@ -2,24 +2,25 @@ $border-size: 1px;
 $border-style: solid;
 $border-color: #555;
 
-@mixin border {
+// MIXINS
+@mixin mixin-border {
   border: $border-size $border-style $border-color;
 }
 
-@mixin app {
+@mixin mixin-app {
   width: 100vw;
   height: 100vh;
   display: flex;
   overflow: hidden;
 }
 
-@mixin header {
-  @include border;
+@mixin mixin-header {
+  @include mixin-border;
   flex: 0;
 }
 
-@mixin body {
-  @include border;
+@mixin mixin-body {
+  @include mixin-border;
   overflow-y: auto;
   flex: 1;
 }
@@ -27,11 +28,11 @@ $border-color: #555;
 // SMALL
 @media screen and (max-width: 768px) {
   .app {
-    @include app;
+    @include mixin-app;
     flex-direction: column;
 
     .header {
-      @include header;
+      @include mixin-header;
 
       .topbar {
         display: block;
@@ -43,7 +44,7 @@ $border-color: #555;
     }
 
     .body {
-      @include body;
+      @include mixin-body;
     }
   }
 }
@@ -51,11 +52,11 @@ $border-color: #555;
 // LARGE
 @media screen and (min-width: 768px) {
   .app {
-    @include app;
+    @include mixin-app;
     flex-direction: row;
 
     .header {
-      @include header;
+      @include mixin-header;
 
       .topbar {
         display: none;
@@ -70,7 +71,7 @@ $border-color: #555;
     }
 
     .body {
-      @include body;
+      @include mixin-body;
     }
   }
 }
