@@ -11,9 +11,9 @@ export function Sidebar() {
       aria-labelledby="offCanvasLabel"
     >
       <div className="offcanvas-header">
-        <h5 className="offcanvas-title" id="offCanvasLabel">
+        <h2 className="offcanvas-title" id="offCanvasLabel">
           {t("app.title")}
-        </h5>
+        </h2>
         <button
           type="button"
           className="btn-close"

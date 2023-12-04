@@ -9,12 +9,12 @@ export function Navbar() {
       <div className="container-fluid">
         <a className="navbar-brand">{t("app.title")}</a>
         <button
-          className="btn btn-link d-none"
+          className="btn btn-lg btn-link text-light"
           type="button"
           data-bs-toggle="offcanvas"
           data-bs-target="#appSidebar"
         >
-          <i className="bi bi-list"></i>
+          <i className="bi bi-three-dots-vertical"></i>
         </button>
       </div>
       <Sidebar />

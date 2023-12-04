@@ -2,12 +2,22 @@ import { NavLink, Route, Routes } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
 const elements = [
-  { key: 1, to: "/", text: "app.construction" },
-  { key: 2, to: "/portfolio", text: "menu.portfolio" },
-  { key: 3, to: "/service_pricing", text: "menu.services_prices" },
-  { key: 4, to: "/resume", text: "menu.resume" },
-  { key: 5, to: "/blog", text: "menu.blog" },
-  { key: 6, to: "/contact", text: "menu.contact" },
+  { key: 1, to: "/", text: "menu.about_me", element: "app.construction" },
+  {
+    key: 2,
+    to: "/portfolio",
+    text: "menu.portfolio",
+    element: "app.construction",
+  },
+  {
+    key: 3,
+    to: "/service_pricing",
+    text: "menu.services_prices",
+    element: "app.construction",
+  },
+  { key: 4, to: "/resume", text: "menu.resume", element: "app.construction" },
+  { key: 5, to: "/blog", text: "menu.blog", element: "app.construction" },
+  { key: 6, to: "/contact", text: "menu.contact", element: "app.construction" },
 ];
 
 export function RoutePoints(): any {
@@ -16,7 +26,7 @@ export function RoutePoints(): any {
   return (
     <Routes>
       {elements.map((el: any) => (
-        <Route key={el.key} path={el.to} element={<h4>{t(el.text)}</h4>} />
+        <Route key={el.key} path={el.to} element={t(el.element)} />
       ))}
     </Routes>
   );

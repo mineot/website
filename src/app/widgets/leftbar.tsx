@@ -6,10 +6,8 @@ export function LeftBar() {
 
   return (
     <div className="h-100 px-3 py-2">
-      <h5>{t("app.title")}</h5>
-      <div className="d-none">
-        <Menus />
-      </div>
+      <h2>{t("app.title")}</h2>
+      <Menus />
     </div>
   );
 }
