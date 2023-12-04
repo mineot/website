@@ -2,6 +2,7 @@ export default {
   translation: {
     app: {
       title: "Website",
+      construction: "Site em construção!",
     },
     menu: {
       about_me: "Sobre Mim",

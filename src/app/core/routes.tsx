@@ -2,7 +2,7 @@ import { NavLink, Route, Routes } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
 const elements = [
-  { key: 1, to: "/", text: "menu.about_me" },
+  { key: 1, to: "/", text: "app.construction" },
   { key: 2, to: "/portfolio", text: "menu.portfolio" },
   { key: 3, to: "/service_pricing", text: "menu.services_prices" },
   { key: 4, to: "/resume", text: "menu.resume" },
@@ -29,7 +29,6 @@ export function Menus(): any {
     <div key={el.key}>
       <NavLink
         to={el.to}
-        data-bs-dismiss="offcanvas"
         className={({ isActive }) =>
           isActive ? "btn btn-link text-primary" : "btn btn-link text-light"
         }

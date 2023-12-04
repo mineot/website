@@ -1,26 +1,23 @@
-$border-size: 1px;
-$border-style: solid;
-$border-color: #555;
-
-// MIXINS
-@mixin mixin-border {
-  border: $border-size $border-style $border-color;
-}
-
-@mixin mixin-app {
+// Mixins
+@mixin app-styles {
   width: 100vw;
   height: 100vh;
   display: flex;
   overflow: hidden;
 }
 
-@mixin mixin-header {
-  @include mixin-border;
+@mixin header-styles {
   flex: 0;
 }
 
-@mixin mixin-body {
-  @include mixin-border;
+@mixin sidebar-styles {
+  display: block;
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: 100%;
+}
+
+@mixin body-styles {
   overflow-y: auto;
   flex: 1;
 }
@@ -28,11 +25,11 @@ $border-color: #555;
 // SMALL
 @media screen and (max-width: 768px) {
   .app {
-    @include mixin-app;
+    @include app-styles;
     flex-direction: column;
 
     .header {
-      @include mixin-header;
+      @include header-styles;
 
       .topbar {
         display: block;
@@ -44,7 +41,7 @@ $border-color: #555;
     }
 
     .body {
-      @include mixin-body;
+      @include body-styles;
     }
   }
 }
@@ -52,26 +49,23 @@ $border-color: #555;
 // LARGE
 @media screen and (min-width: 768px) {
   .app {
-    @include mixin-app;
+    @include app-styles;
     flex-direction: row;
 
     .header {
-      @include mixin-header;
+      @include header-styles;
 
       .topbar {
         display: none;
       }
 
       .sidebar {
-        display: block;
-        overflow-y: auto;
-        overflow-x: hidden;
-        height: 100%;
+        @include sidebar-styles;
       }
     }
 
     .body {
-      @include mixin-body;
+      @include body-styles;
     }
   }
 }

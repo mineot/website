@@ -1,20 +1,21 @@
 import { Navbar } from "./widgets/navbar";
-import { RoutePoints, Menus } from "./core/routes";
+import { RoutePoints } from "./core/routes";
+import { LeftBar } from "./widgets/leftbar";
 import "./app.scss";
 
 export default function App() {
   return (
     <div className="app">
-      <div className="header">
+      <div className="header bg-body-tertiary">
         <div className="topbar">
           <Navbar />
         </div>
-        <div className="sidebar">
-          <Menus />
+        <div className="sidebar bg-body-tertiary">
+          <LeftBar />
         </div>
       </div>
       <div className="body">
-        <div className="container">
+        <div className="container pt-2">
           <RoutePoints />
         </div>
       </div>
