@@ -17,16 +17,29 @@ export function RoutePoints(): any {
 export function Menus(): any {
   const { t } = useTranslation();
 
-  function navClass({ isActive }: any) {
-    return isActive ? "btn btn-primary" : "btn btn-outline-secondary";
+  function navClass({ isActive }: any): string {
+    const styles: string[] = ["btn", "btn-link"];
+    if (isActive) {
+      styles.push("text-primary");
+    } else {
+      styles.push("text-secondary");
+    }
+    return styles.join(" ");
+  }
+
+  function iconClass(icon: string): string {
+    return `bi bi-${icon} me-2`;
   }
 
   return (
-    <div className="d-grid gap-2">
+    <div className="gap-2">
       {elements.map((el: Element) => (
-        <NavLink key={el.uuid} to={el.to} className={navClass}>
-          <span>{t(el.text)}</span>
-        </NavLink>
+        <div key={el.uuid}>
+          <NavLink to={el.to} className={navClass}>
+            <i className={iconClass(el.icon)}></i>
+            <span>{t(el.text)}</span>
+          </NavLink>
+        </div>
       ))}
     </div>
   );
