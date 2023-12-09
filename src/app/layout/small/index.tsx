@@ -1,4 +1,4 @@
-import { Menus, RoutePoints } from "./core/routes";
+import { Menus, RoutePoints } from "@/app/core/routes";
 
 export function LayoutSmall() {
   const navbar = (

@@ -1,5 +1,5 @@
-import { LayoutLarge } from "./layout-large";
-import { LayoutSmall } from "./layout-small";
+import { LayoutLarge } from "./layout/large";
+import { LayoutSmall } from "./layout/small";
 
 export default function App() {
   const large = (
