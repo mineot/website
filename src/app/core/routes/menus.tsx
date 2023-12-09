@@ -8,6 +8,7 @@ function navClass({ isActive }: any): string {
     styles.push("btn-primary");
   } else {
     styles.push("btn-dark");
+    styles.push("text-secondary");
   }
   return styles.join(" ");
 }

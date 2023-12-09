@@ -7,7 +7,7 @@ export function RoutePoints(): any {
   const { t } = useTranslation();
 
   const routes = elements.map((el: Element) => (
-    <Route key={el.uuid} path={el.to} element={t(el.element)} />
+    <Route key={el.uuid} path={el.to} element={ `${t(el.text)}: ${t(el.element)}` } />
   ));
 
   return <Routes>{routes}</Routes>;
