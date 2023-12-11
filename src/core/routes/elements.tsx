@@ -1,10 +1,10 @@
 import { v4 as uuidv4 } from "uuid";
-import { AboutMe } from "@/app/pages/about_me";
-import { Portfolio } from "@/app/pages/portfolio";
-import { ServicesPrices } from "@/app/pages/services_prices";
-import { Resume } from "@/app/pages/resume";
-import { Blog } from "@/app/pages/blog";
-import { Contact } from "@/app/pages/contact";
+import { AboutMe } from "@/pages/about_me";
+import { Portfolio } from "@/pages/portfolio";
+import { ServicesPrices } from "@/pages/services_prices";
+import { Resume } from "@/pages/resume";
+import { Blog } from "@/pages/blog";
+import { Contact } from "@/pages/contact";
 
 export interface Element {
   uuid: string;

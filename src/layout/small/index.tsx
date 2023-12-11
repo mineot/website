@@ -1,11 +1,14 @@
-import { Menus, RoutePoints } from "@/app/core/routes";
+import { Menus, RoutePoints } from "@/core/routes";
+import { useDocument } from "@/doc";
 
 export function LayoutSmall() {
+  const document = useDocument();
+
   const navbar = (
     <nav className="navbar fixed-top sticky-top bg-body-tertiary">
       <div className="container-fluid">
         <a className="navbar-brand" href="#">
-          Website
+          {document?.name}
         </a>
         <button
           className="btn btn-lg btn-link text-light"
@@ -27,7 +30,7 @@ export function LayoutSmall() {
     >
       <div className="offcanvas-header">
         <h5 className="offcanvas-title" id="appSidebarLabel">
-          Website
+          {document?.name}
         </h5>
         <button
           type="button"
