@@ -1,22 +1,21 @@
 import { initReactI18next } from "react-i18next";
-import i18n from "i18next";
 import en from "./en";
+import i18n from "i18next";
+import LanguageDetector from "i18next-browser-languagedetector";
 import pt from "./pt";
 
-const langs = {
-  ["en" as string]: "en",
-  ["en-US" as string]: "en",
-  ["pt" as string]: "pt",
-  ["pt-BR" as string]: "pt",
-};
-
-export function i18nInit() {
-  i18n.use(initReactI18next).init({
-    resources: { en, pt },
-    lng: langs[navigator.language],
+i18n
+  .use(initReactI18next)
+  .use(LanguageDetector)
+  .init({
+    resources: {
+      en,
+      pt,
+      "pt-BR": pt,
+      "en-US": en,
+    },
     fallbackLng: "en",
     interpolation: {
       escapeValue: false,
     },
   });
-}

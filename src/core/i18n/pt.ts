@@ -4,13 +4,25 @@ export default {
       title: "Website",
       construction: "Site em construção!",
     },
-    menu: {
-      about_me: "Sobre Mim",
-      portfolio: "Portifólio",
-      services_prices: "Serviços e Preços",
-      resume: "Currículo",
-      blog: "Blog",
-      contact: "Contato",
+    pages: {
+      about_me: {
+        title: "Sobre Mim",
+      },
+      portfolio: {
+        title: "Portifólio",
+      },
+      services_prices: {
+        title: "Serviços e Preços",
+      },
+      resume: {
+        title: "Currículo",
+      },
+      blog: {
+        title: "Blog",
+      },
+      contact: {
+        title: "Contato",
+      },
     },
   },
 };

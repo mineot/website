@@ -13,7 +13,6 @@ const DocumentContext = createContext<Document | undefined>(undefined);
 export const DocumentProvider: React.FC = ({ children }: any) => {
   const [document, setDocument] = useState<Document | undefined>(undefined);
 
-  // Função para inicializar o documento
   const initDoc = async () => {
     const lang: string = navigator.language.toLowerCase();
     const current: string = langs[lang] ?? "en";
