@@ -1,3 +1,4 @@
+import { I18NKeys } from "@/core/i18n";
 import { useTranslation } from "react-i18next";
 
 export function Contact() {
@@ -5,8 +6,8 @@ export function Contact() {
 
   return (
     <div>
-      <h1>{t("menu.contact")}</h1>
-      <h5>{t("app.construction")}</h5>
+      <h1>{t(I18NKeys.pages.contact.title)}</h1>
+      <h5>{t(I18NKeys.app.construction)}</h5>
     </div>
   );
 }

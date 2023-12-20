@@ -1,7 +1,7 @@
 import { Menus, RoutePoints } from "@/core/routes";
 import { useDocument } from "@/doc";
 
-export function LayoutLarge() {
+export function Large() {
   const document = useDocument();
 
   return (

@@ -1,27 +1,17 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
+import { ComponentArgs } from "@/contracts/react-params";
 import { Document } from "./document";
+import { loadAdditionalResource } from "@/core/i18n";
+import i18n from "i18next";
 
-const langs = {
-  ["en" as string]: "en",
-  ["pt" as string]: "pt",
-  ["en-us" as string]: "en",
-  ["pt-br" as string]: "pt",
-};
+const DocumentContext = createContext<Document | null>(null);
 
-const DocumentContext = createContext<Document | undefined>(undefined);
-
-export const DocumentProvider: React.FC = ({ children }: any) => {
-  const [document, setDocument] = useState<Document | undefined>(undefined);
+export const DocumentProvider: React.FC<ComponentArgs> = ({ children }) => {
+  const [document, setDocument] = useState<Document | null>(null);
 
   const initDoc = async () => {
-    const lang: string = navigator.language.toLowerCase();
-    const current: string = langs[lang] ?? "en";
-    const res = await fetch(`/doc/${current}.json`);
-
-    if (res.ok) {
-      const data = await res.json();
-      setDocument(data);
-    }
+    await loadAdditionalResource();
+    setDocument(i18n.getResourceBundle(i18n.language, "document"));
   };
 
   useEffect(() => {
@@ -35,6 +25,6 @@ export const DocumentProvider: React.FC = ({ children }: any) => {
   );
 };
 
-export const useDocument = (): Document | undefined => {
+export const useDocument = (): Document | null => {
   return useContext(DocumentContext);
 };

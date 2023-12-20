@@ -1,3 +1,4 @@
+import { I18NKeys } from "@/core/i18n";
 import { useTranslation } from "react-i18next";
 
 export function ServicesPrices() {
@@ -5,8 +6,8 @@ export function ServicesPrices() {
 
   return (
     <div>
-      <h1>{t("menu.services_prices")}</h1>
-      <h5>{t("app.construction")}</h5>
+      <h1>{t(I18NKeys.pages.services_prices.title)}</h1>
+      <h5>{t(I18NKeys.app.construction)}</h5>
     </div>
   );
 }
