@@ -4,10 +4,12 @@ import { Document } from "./document";
 import { loadAdditionalResource } from "@/core/i18n";
 import i18n from "i18next";
 
-const DocumentContext = createContext<Document | null>(null);
+export type DocumentType = Document | null;
+
+const DocumentContext = createContext<DocumentType>(null);
 
 export const DocumentProvider: React.FC<ComponentArgs> = ({ children }) => {
-  const [document, setDocument] = useState<Document | null>(null);
+  const [document, setDocument] = useState<DocumentType>(null);
 
   const initDoc = async () => {
     await loadAdditionalResource();
@@ -25,6 +27,6 @@ export const DocumentProvider: React.FC<ComponentArgs> = ({ children }) => {
   );
 };
 
-export const useDocument = (): Document | null => {
+export const useDocument = (): DocumentType => {
   return useContext(DocumentContext);
 };

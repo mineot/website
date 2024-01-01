@@ -1,3 +1,6 @@
 {
-  "name": "Joe Due"
+  "photo": "https://i.pravatar.cc/500",
+  "name": "Joe Doe",
+  "jobTitle": "My Job",
+  "summary": "A place designed for you to speak about yourself, briefly and authentically."
 }
