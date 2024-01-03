@@ -5,37 +5,45 @@
   @extend .h-100;
 }
 
+@mixin layout-large {
+  @include layout-base;
+  @extend .d-none;
+  @extend .d-md-block;
+
+  .panel {
+    @include layout-base;
+    @extend .d-flex;
+    @extend .flex-row;
+    @extend .gap-2;
+
+    .left {
+      @extend .p-2;
+      @extend .overflow-y-auto;
+      @extend .bg-body-tertiary;
+      @extend .border-end;
+    }
+
+    .center {
+      @extend .flex-fill;
+      @extend .p-2;
+      @extend .container;
+      @extend .overflow-y-auto;
+    }
+  }
+}
+
+@mixin layout-small {
+  @include layout-base;
+  @extend .d-md-none;
+  @extend .d-block;
+}
+
 .layout {
   .small {
-    @include layout-base;
-    @extend .d-md-none;
-    @extend .d-block;
+    @include layout-small;
   }
 
   .large {
-    @include layout-base;
-    @extend .d-none;
-    @extend .d-md-block;
-
-    .panel {
-      @include layout-base;
-      @extend .d-flex;
-      @extend .flex-row;
-      @extend .gap-2;
-
-      .left {
-        @extend .p-2;
-        @extend .overflow-y-auto;
-        @extend .bg-body-tertiary;
-        @extend .border-end;
-      }
-
-      .center {
-        @extend .flex-fill;
-        @extend .p-2;
-        @extend .container;
-        @extend .overflow-y-auto;
-      }
-    }
+    @include layout-large;
   }
 }
