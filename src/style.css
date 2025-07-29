@@ -1,1 +1,19 @@
+@import url("https://fonts.googleapis.com/css2?family=Goldman:wght@400;700&family=Jersey+15&family=Share+Tech+Mono&display=swap");
 @import "tailwindcss";
+
+:root {
+  --font-sans: "Goldman", Arial, "Segoe UI", "Helvetica Neue", Helvetica,
+    Verdana, sans-serif;
+  --font-serif: "Jersey 15", Georgia, Cambria, "Times New Roman", Times, serif;
+  --font-mono: "Share Tech Mono", monospace;
+}
+
+:root {
+  --bg-color: var(--color-slate-950);
+  --text-color: var(--color-slate-50);
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
