@@ -5,6 +5,9 @@ import enUS from "./locales/en-US.json";
 import esAR from "./locales/es-AR.json";
 import ptBR from "./locales/pt-BR.json";
 
+import { Header } from "./content/header";
+import { PersonalInfo } from "./content/personal-info";
+
 i18next
   .init({
     lng: navigator.language,
@@ -21,3 +24,11 @@ i18next
       el.textContent = i18next.t(key);
     });
   });
+
+const app = document.querySelector("#app") as HTMLElement;
+
+const header = new Header(app);
+header.createElement();
+
+const personalInfo = new PersonalInfo(app);
+personalInfo.createElement();
