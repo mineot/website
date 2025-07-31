@@ -6,7 +6,7 @@ import esAR from "./locales/es-AR.json";
 import ptBR from "./locales/pt-BR.json";
 
 import { Header } from "./content/header";
-import { PersonalInfo } from "./content/personal-info";
+import { Persona } from "./content/persona";
 
 i18next
   .init({
@@ -30,5 +30,5 @@ const app = document.querySelector("#app") as HTMLElement;
 const header = new Header(app);
 header.createElement();
 
-const personalInfo = new PersonalInfo(app);
+const personalInfo = new Persona(app);
 personalInfo.createElement();
