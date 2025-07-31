@@ -1,17 +1,17 @@
-import "./style.css";
+import "./styles/style.css";
 
 import i18next from "i18next";
 import enUS from "./locales/en-US.json";
 import esAR from "./locales/es-AR.json";
 import ptBR from "./locales/pt-BR.json";
 
-import { AboutMe } from "./content/about-me";
-import { Footer } from "./content/semantics/footer";
-import { Header } from "./content/semantics/header";
-import { Persona } from "./content/persona";
-import { Projects } from "./content/projects";
-import { Skills } from "./content/skills";
-import { MainContent } from "./content/semantics/main-content";
+import { AboutMe } from "./components/about-me";
+import { Footer } from "./components/semantics/footer";
+import { Header } from "./components/semantics/header";
+import { Persona } from "./components/persona";
+import { Projects } from "./components/projects";
+import { Skills } from "./components/skills";
+import { MainContent } from "./components/semantics/main-content";
 
 i18next
   .init({

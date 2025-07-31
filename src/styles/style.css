@@ -17,4 +17,6 @@ body {
   background-color: var(--bg-color);
   color: var(--text-color);
   font-size: var(--font-size);
+
+  @apply h-full w-full mx-auto px-3 md:max-w-6xl;
 }
