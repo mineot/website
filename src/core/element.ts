@@ -1,15 +1,13 @@
-export type CreateElementReturn = HTMLElement | null;
-
 export abstract class Element {
-  private $parent: HTMLElement;
+  private $parent: HTMLElement | null;
 
-  get parent(): HTMLElement {
+  get parent(): HTMLElement | null {
     return this.$parent;
   }
 
-  constructor(parent: HTMLElement) {
-    this.$parent = parent;
+  constructor(parent?: HTMLElement) {
+    this.$parent = parent ?? null;
   }
 
-  abstract createElement(): CreateElementReturn;
+  abstract createElement(children?: HTMLElement[]): HTMLElement;
 }

@@ -1,15 +1,14 @@
-import { Element, type CreateElementReturn } from "../core/element";
+import { Element } from "../../core/element";
 
 export class Header extends Element {
   constructor(parent: HTMLElement) {
     super(parent);
   }
 
-  createElement(): CreateElementReturn {
+  createElement(): HTMLElement {
     const header = document.createElement("header");
     header.textContent = "Header";
-    this.parent.appendChild(header);
-
+    this.parent?.appendChild(header);
     return header;
   }
 }

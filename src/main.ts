@@ -5,8 +5,13 @@ import enUS from "./locales/en-US.json";
 import esAR from "./locales/es-AR.json";
 import ptBR from "./locales/pt-BR.json";
 
-import { Header } from "./content/header";
+import { AboutMe } from "./content/about-me";
+import { Footer } from "./content/semantics/footer";
+import { Header } from "./content/semantics/header";
 import { Persona } from "./content/persona";
+import { Projects } from "./content/projects";
+import { Skills } from "./content/skills";
+import { MainContent } from "./content/semantics/main-content";
 
 i18next
   .init({
@@ -30,5 +35,17 @@ const app = document.querySelector("#app") as HTMLElement;
 const header = new Header(app);
 header.createElement();
 
-const personalInfo = new Persona(app);
-personalInfo.createElement();
+const content = new MainContent(app);
+const personalInfo = new Persona();
+const aboutMe = new AboutMe();
+const skills = new Skills();
+const projects = new Projects();
+content.createElement([
+  personalInfo.createElement(),
+  aboutMe.createElement(),
+  skills.createElement(),
+  projects.createElement(),
+]);
+
+const footer = new Footer(app);
+footer.createElement();
