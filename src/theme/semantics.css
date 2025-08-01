@@ -1,0 +1,23 @@
+@import "tailwindcss";
+
+.header {
+  @apply flex flex-col md:flex-row gap-4 p-2;
+  @apply items-start md:items-center justify-between;
+
+  @apply app-primary app-primary-border;
+
+  > h1 {
+    @apply text-secondary-500 font-bold text-lg;
+  }
+
+  > nav > ul {
+    @apply flex items-center justify-between gap-4;
+    @apply text-sm;
+
+    > li {
+      @apply cursor-pointer;
+      @apply text-primary-400;
+      @apply hover:text-primary-300 transition-colors;
+    }
+  }
+}

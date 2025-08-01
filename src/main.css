@@ -1,0 +1,20 @@
+@import url("https://fonts.googleapis.com/css2?family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Jersey+10&family=Kode+Mono:wght@400..700&display=swap");
+@import "tailwindcss";
+@import "./theme/theme.css";
+@import "./theme/utilities.css";
+
+@import "./theme/semantics.css";
+
+body {
+  @apply h-full w-full mx-auto;
+  @apply p-2 md:py-0 md:max-w-6xl;
+  @apply app-primary app-duration;
+
+  > #app {
+    @apply flex flex-col flex-wrap gap-2;
+
+    > main {
+      @apply flex flex-col flex-wrap gap-2;
+    }
+  }
+}
