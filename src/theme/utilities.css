@@ -4,11 +4,23 @@
   @apply duration-300;
 }
 
+@utility app-border-style {
+  @apply border-dashed;
+}
+
+@utility app-border-primary-color {
+  @apply border-primary-600;
+}
+
 @utility app-primary {
   @apply bg-primary-900 text-primary-100;
   @apply text-base;
 }
 
-@utility app-primary-border {
-  @apply border border-dashed border-primary-600;
+@utility app-text-primary-emphasis {
+  @apply text-primary-400;
+}
+
+@utility app-secondary {
+  @apply text-secondary-500;
 }

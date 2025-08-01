@@ -4,17 +4,22 @@
 @import "./theme/utilities.css";
 
 @import "./theme/semantics.css";
+@import "./theme/components.css";
+
+* {
+  @apply box-border;
+}
 
 body {
   @apply h-full w-full mx-auto;
-  @apply p-2 md:py-0 md:max-w-6xl;
+  @apply px-2 md:max-w-6xl;
   @apply app-primary app-duration;
 
   > #app {
-    @apply flex flex-col flex-wrap gap-2;
+    @apply flex flex-col flex-wrap gap-4;
 
     > main {
-      @apply flex flex-col flex-wrap gap-2;
+      @apply flex flex-col flex-wrap gap-4;
     }
   }
 }

@@ -1,0 +1,45 @@
+@utility app-persona {
+  @apply flex flex-col md:flex-row justify-between items-center;
+  @apply gap-2 md:gap-8;
+
+  > .personal-info {
+    @apply border app-border-style app-border-primary-color;
+    @apply p-4 rounded-tr-3xl rounded-bl-3xl;
+    @apply flex flex-col items-center gap-4;
+
+    > img {
+      @apply w-18 h-18 rounded-full;
+    }
+
+    .name {
+      @apply flex flex-col items-center;
+
+      > h2 {
+        @apply text-lg font-bold app-secondary;
+      }
+
+      > h3 {
+        @apply text-sm app-text-primary-emphasis;
+      }
+    }
+
+    > ul.contact-list {
+      @apply flex flex-col gap-1;
+
+      > li {
+        @apply text-sm flex flex-row gap-3 flex-nowrap;
+
+        > i {
+          @apply app-secondary;
+        }
+      }
+    }
+  }
+
+  > .board {
+    @apply flex-1;
+  }
+
+  > .panel {
+  }
+}

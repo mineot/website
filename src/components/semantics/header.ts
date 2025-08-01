@@ -2,7 +2,7 @@ import { Element } from "../../core/element";
 
 const data = {
   h1: "Welcome to My Website",
-  socials: [
+  links: [
     { name: "Link 1", url: "https://www.link1.com/" },
     { name: "Link 2", url: "https://www.link2.com/" },
     { name: "Link 3", url: "https://www.link3.com/" },
@@ -16,7 +16,7 @@ export class Header extends Element {
 
   createElement(): HTMLElement {
     const header = document.createElement("header");
-    header.classList.add("header");
+    header.classList.add("app-header");
     this.parent?.appendChild(header);
 
     const h1 = document.createElement("h1");
@@ -29,7 +29,7 @@ export class Header extends Element {
     const navList = document.createElement("ul");
     nav.appendChild(navList);
 
-    data.socials.forEach((item) => {
+    data.links.forEach((item) => {
       const li = document.createElement("li");
       navList.appendChild(li);
 

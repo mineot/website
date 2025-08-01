@@ -1,13 +1,14 @@
 @import "tailwindcss";
 
-.header {
+@utility app-header {
   @apply flex flex-col md:flex-row gap-4 p-2;
   @apply items-start md:items-center justify-between;
 
-  @apply app-primary app-primary-border;
+  @apply app-primary;
+  @apply border-b app-border-style app-border-primary-color;
 
   > h1 {
-    @apply text-secondary-500 font-bold text-lg;
+    @apply text-lg font-bold app-secondary;
   }
 
   > nav > ul {
