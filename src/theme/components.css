@@ -1,6 +1,6 @@
 @utility app-persona {
   @apply flex flex-col md:flex-row justify-between items-center;
-  @apply gap-2 md:gap-8;
+  @apply gap-8;
 
   > .info {
     @apply border app-border-style app-border-primary-color;
@@ -38,6 +38,26 @@
 
   > .banner {
     @apply flex-1;
+    @apply flex flex-col gap-12;
+
+    > h2 {
+      @apply text-4xl font-bold text-nowrap app-secondary;
+    }
+
+    > p.subtitle {
+      @apply text-lg;
+    }
+
+    > p.message {
+      @apply text-sm font-thin;
+    }
+
+    > ul {
+      @apply flex flex-row gap-6;
+      > li {
+        @apply app-link-primary;
+      }
+    }
   }
 
   > .details {

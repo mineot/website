@@ -16,9 +16,7 @@
     @apply text-sm;
 
     > li {
-      @apply cursor-pointer;
-      @apply text-primary-400;
-      @apply hover:text-primary-300 transition-colors;
+      @apply app-link-primary;
     }
   }
 }

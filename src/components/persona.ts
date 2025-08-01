@@ -1,4 +1,5 @@
 import { createElement } from "../core/element";
+import { highlightDestak } from "../core/highlight-destak";
 
 const data = {
   info: {
@@ -19,7 +20,8 @@ const data = {
   },
   banner: {
     title: "Banner Title",
-    hello: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    subtitle:
+      "Lorem [ipsum:destak] dolor sit amet, consectetur adipiscing elit.",
     message:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     links: [
@@ -97,8 +99,16 @@ export function Persona(): HTMLElement {
         classes: ["banner"],
         children: [
           createElement({ tagName: "h2", textContent: data.banner.title }),
-          createElement({ tagName: "p", textContent: data.banner.hello }),
-          createElement({ tagName: "p", textContent: data.banner.message }),
+          createElement({
+            tagName: "p",
+            classes: ["subtitle"],
+            children: highlightDestak(data.banner.subtitle),
+          }),
+          createElement({
+            tagName: "p",
+            classes: ["message"],
+            textContent: data.banner.message,
+          }),
           createElement({
             tagName: "ul",
             children: data.banner.links.map((link) =>

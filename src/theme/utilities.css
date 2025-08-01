@@ -8,6 +8,11 @@
   @apply border-dashed;
 }
 
+@utility app-destak {
+  @apply app-secondary;
+  @apply font-bold;
+}
+
 @utility app-border-primary-color {
   @apply border-primary-600;
 }
@@ -19,6 +24,12 @@
 
 @utility app-text-primary-emphasis {
   @apply text-primary-400;
+}
+
+@utility app-link-primary {
+  @apply cursor-pointer;
+  @apply text-primary-400;
+  @apply hover:text-primary-300 transition-colors;
 }
 
 @utility app-secondary {
