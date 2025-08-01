@@ -1,9 +1,8 @@
-import { Element } from "../core/element";
+import { createElement } from "../core/element";
 
-export class AboutMe extends Element {
-  createElement(): HTMLElement {
-    const section = document.createElement("section");
-    section.textContent = "About Me";
-    return section;
-  }
+export function AboutMe(): HTMLElement {
+  return createElement({
+    tagName: "section",
+    textContent: "About Me",
+  });
 }

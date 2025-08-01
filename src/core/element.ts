@@ -1,13 +1,40 @@
-export abstract class Element {
-  private $parent: HTMLElement | null;
+export interface ElementParam {
+  tagName: string;
+  parent?: HTMLElement;
+  attributes?: { key: string; value: string }[];
+  textContent?: string;
+  classes?: string[];
+  children?: HTMLElement[];
+}
 
-  get parent(): HTMLElement | null {
-    return this.$parent;
+export function createElement(param: ElementParam): HTMLElement {
+  const element = document.createElement(param.tagName);
+
+  if (param.parent) {
+    param.parent.appendChild(element);
   }
 
-  constructor(parent?: HTMLElement) {
-    this.$parent = parent ?? null;
+  if (param.attributes) {
+    for (const { key, value } of param.attributes) {
+      element.setAttribute(key, value);
+    }
   }
 
-  abstract createElement(children?: HTMLElement[]): HTMLElement;
+  if (param.textContent) {
+    element.textContent = param.textContent;
+  }
+
+  if (param.classes) {
+    for (const className of param.classes) {
+      element.classList.add(className);
+    }
+  }
+
+  if (param.children) {
+    for (const child of param.children) {
+      element.appendChild(child);
+    }
+  }
+
+  return element;
 }

@@ -32,20 +32,6 @@ i18next
 
 const app = document.querySelector("#app") as HTMLElement;
 
-const header = new Header(app);
-header.createElement();
-
-const content = new MainContent(app);
-const personalInfo = new Persona();
-const aboutMe = new AboutMe();
-const skills = new Skills();
-const projects = new Projects();
-content.createElement([
-  personalInfo.createElement(),
-  aboutMe.createElement(),
-  skills.createElement(),
-  projects.createElement(),
-]);
-
-const footer = new Footer(app);
-footer.createElement();
+Header(app);
+MainContent(app, [Persona(), AboutMe(), Skills(), Projects()]);
+Footer(app);

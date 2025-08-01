@@ -1,4 +1,4 @@
-import { Element } from "../../core/element";
+import { createElement } from "../../core/element";
 
 const data = {
   h1: "Welcome to My Website",
@@ -9,38 +9,40 @@ const data = {
   ],
 };
 
-export class Header extends Element {
-  constructor(parent: HTMLElement) {
-    super(parent);
-  }
-
-  createElement(): HTMLElement {
-    const header = document.createElement("header");
-    header.classList.add("app-header");
-    this.parent?.appendChild(header);
-
-    const h1 = document.createElement("h1");
-    h1.textContent = data.h1;
-    header.appendChild(h1);
-
-    const nav = document.createElement("nav");
-    header.appendChild(nav);
-
-    const navList = document.createElement("ul");
-    nav.appendChild(navList);
-
-    data.links.forEach((item) => {
-      const li = document.createElement("li");
-      navList.appendChild(li);
-
-      const a = document.createElement("a");
-      a.href = item.url;
-      a.target = "_blank";
-      a.rel = "noopener noreferrer";
-      a.textContent = item.name;
-      li.appendChild(a);
-    });
-
-    return header;
-  }
+export function Header(parent: HTMLElement): void {
+  createElement({
+    parent,
+    tagName: "header",
+    classes: ["app-header"],
+    children: [
+      createElement({
+        tagName: "h1",
+        textContent: data.h1,
+      }),
+      createElement({
+        tagName: "nav",
+        children: [
+          createElement({
+            tagName: "ul",
+            children: data.links.map((link) =>
+              createElement({
+                tagName: "li",
+                children: [
+                  createElement({
+                    tagName: "a",
+                    attributes: [
+                      { key: "href", value: link.url },
+                      { key: "target", value: "_blank" },
+                      { key: "rel", value: "noopener noreferrer" },
+                    ],
+                    textContent: link.name,
+                  }),
+                ],
+              })
+            ),
+          }),
+        ],
+      }),
+    ],
+  });
 }

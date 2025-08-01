@@ -2,7 +2,7 @@
   @apply flex flex-col md:flex-row justify-between items-center;
   @apply gap-2 md:gap-8;
 
-  > .personal-info {
+  > .info {
     @apply border app-border-style app-border-primary-color;
     @apply p-4 rounded-tr-3xl rounded-bl-3xl;
     @apply flex flex-col items-center gap-4;
@@ -11,7 +11,7 @@
       @apply w-18 h-18 rounded-full;
     }
 
-    .name {
+    .names {
       @apply flex flex-col items-center;
 
       > h2 {
@@ -36,10 +36,10 @@
     }
   }
 
-  > .board {
+  > .banner {
     @apply flex-1;
   }
 
-  > .panel {
+  > .details {
   }
 }
